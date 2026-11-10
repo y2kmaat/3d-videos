@@ -43,10 +43,12 @@ REMOTION_BROWSER_EXECUTABLE=/path/to/chrome-headless-shell npm run render:cpu
 </ThreeCanvas>
 ```
 
-### Realistic (Pixar-style) host
+### Realistic host
 
-For a film-quality look, generate a portrait of yourself with an AI image model and use
-`CharacterShort` with `host: "portrait"` (still) or `host: "video"` (lip-synced clip).
+`CharacterShort` can also use a realistic host:
+- `host: "glb"`: a rigged, realistic 3D avatar of you (`.glb` with ARKit blendshapes), lip-synced
+  and animated in 3D (`src/character/GlbHost.tsx`)
+- `host: "portrait"` / `"video"`: a Pixar-style AI image or a lip-synced talking clip
 See **[docs/realistic-host.md](docs/realistic-host.md)** for the prompt and steps.
 
 ### Compositions

@@ -58,6 +58,9 @@ export const RemotionRoot: React.FC = () => {
         hostImage: "host/host-portrait.png",
         hostVideo: "host/host-talking.mp4",
         hostFocusY: 25,
+        hostModel: "host/host-avatar.glb",
+        hostAnimation: "",
+        hostModelHeight: 3.2,
       }}
     />
     </>

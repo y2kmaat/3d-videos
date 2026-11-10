@@ -1,10 +1,36 @@
-# Realistic "Pixar-style" host
+# Realistic host
+
+There are two ways to get a realistic host. Option A gives a true 3D animated version of you.
+
+## Option A: realistic 3D avatar (`host: "glb"`)
+
+The project animates any rigged `.glb` avatar in real 3D: lip-sync from your captions, blinking,
+eye movement, smiles, head motion, camera framing, plus any body animation inside the file.
+
+1. **Create the 3D model of yourself.** Use a selfie-to-3D-avatar tool that exports **GLB with
+   ARKit (52) face blendshapes**, or visemes. Check each tool's current export options; Avaturn
+   is one example. For film-level quality, a 3D artist can build one from your photos (ask for a
+   GLB with ARKit blendshapes and a humanoid skeleton).
+2. Optional: add body motion (idle, talking, waving) with an auto-rigging and animation service
+   such as Mixamo, then export it as GLB. Note the clip name.
+3. Save it as `public/host/host-avatar.glb`.
+4. In Studio, open **CharacterShort** and set `host` to `glb`. Use `hostModelHeight` to resize,
+   and `hostAnimation` for a clip name, if the file has one.
+
+```bash
+npx remotion render CharacterShort out/my-short.mp4 --gl=swangle --props='{"host":"glb"}'
+```
+
+Without a body animation, the face is driven by the captions (jaw, lips, blinks, brows, eyes)
+and the head bone (or the whole model) nods and sways.
+
+## Option B: Pixar-style AI image (`host: "portrait"` / `"video"`)
 
 The built-in `HostCharacter` is made of simple 3D shapes, so it can only ever look like a toy figure.
 For the polished, film-style look, generate the character with an AI image model, then let this
 project handle captions, music, titles and rendering.
 
-## 1. Generate your character image
+### 1. Generate your character image
 
 In ChatGPT (or another image model), attach a clear, front-facing selfie and paste:
 
@@ -25,13 +51,13 @@ Tips:
 
 Save it as `public/host/host-portrait.png`.
 
-## 2. (Optional) Make it talk
+### 2. (Optional) Make it talk
 
 Upload the portrait and your voiceover to an image-to-talking-video (lip-sync) app. The video you
 found uses CapCut; many similar tools exist. Export as MP4 and save it as
 `public/host/host-talking.mp4`.
 
-## 3. Render
+### 3. Render
 
 In Studio (`npm run dev`), open **CharacterShort** and set:
 

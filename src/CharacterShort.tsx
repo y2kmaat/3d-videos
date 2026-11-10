@@ -14,6 +14,7 @@ import { Captions } from "./components/Captions";
 import { SHORTS_FONT } from "./lib/fonts";
 import { CameraRig } from "./lib/CameraRig";
 import { PortraitHost } from "./components/PortraitHost";
+import { GlbHost } from "./character/GlbHost";
 import { isTalkingAt, mouthOpenAt, useCaptions } from "./lib/useCaptions";
 
 // Layout (px, 1080x1920). Camera is framed so the character fills the stage band.
@@ -41,8 +42,14 @@ export const characterShortSchema = z.object({
    * - "3d": the built-in procedural HostCharacter
    * - "portrait": a still image (e.g. a Pixar-style AI render of you) in public/
    * - "video": a talking-head clip (e.g. from a lip-sync tool) in public/; its own audio is used
+   * - "glb": a realistic rigged 3D avatar (.glb) in public/, lip-synced to the captions
    */
-  host: z.enum(["3d", "portrait", "video"]),
+  host: z.enum(["3d", "portrait", "video", "glb"]),
+  hostModel: z.string(),
+  /** Optional animation clip name inside the .glb (e.g. an idle loop) */
+  hostAnimation: z.string(),
+  /** Size of the .glb avatar on screen (world units it is scaled to; ~3 fills the stage) */
+  hostModelHeight: z.number().min(0.5).max(10),
   hostImage: z.string(),
   hostVideo: z.string(),
   /** Crop focus for portrait/video, 0 = top, 100 = bottom */
@@ -65,6 +72,9 @@ export const CharacterShort: React.FC<CharacterShortProps> = ({
   hostImage,
   hostVideo,
   hostFocusY,
+  hostModel,
+  hostAnimation,
+  hostModelHeight,
 }) => {
   const frame = useCurrentFrame();
   const { fps, width, height, durationInFrames } = useVideoConfig();
@@ -106,9 +116,26 @@ export const CharacterShort: React.FC<CharacterShortProps> = ({
             lookX={Math.sin(frame / 50) * 0.15}
           />
         </ThreeCanvas>
+      ) : host === "glb" ? (
+        <ThreeCanvas width={width} height={height} camera={{ fov: 30 }}>
+          <CameraRig position={[0, 1.78, 14]} target={[0, 1.78, 0]} />
+          <hemisphereLight args={["#fff4e8", "#2a1d18", 1.1]} />
+          <directionalLight position={[2.5, 3, 5]} intensity={2.6} color="#ffe6cc" />
+          <directionalLight position={[-3, 1.5, 2]} intensity={0.8} color="#9fb8ff" />
+          <directionalLight position={[0, 3, -4]} intensity={2.2} color={accent} />
+          <GlbHost
+            src={hostModel}
+            animation={hostAnimation || undefined}
+            mouthOpen={mouthOpenAt(captions, ms)}
+            talking={isTalkingAt(captions, ms)}
+            lookX={Math.sin(frame / 50) * 0.15}
+            height={hostModelHeight}
+            position={[0, 1.78 - (1 - enter) * 4, 0]}
+          />
+        </ThreeCanvas>
       ) : (
         <PortraitHost
-          mode={host}
+          mode={host as "portrait" | "video"}
           src={host === "video" ? hostVideo : hostImage}
           talking={isTalkingAt(captions, ms)}
           top={STAGE_TOP}

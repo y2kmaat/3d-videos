@@ -8,3 +8,5 @@ public/host/*.jpeg
 public/host/*.webp
 public/host/*.mp4
 public/host/*.mov
+public/host/*.glb
+public/host/*.gltf
