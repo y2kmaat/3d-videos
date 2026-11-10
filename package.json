@@ -1,0 +1,31 @@
+{
+  "name": "3d-videos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "3D animated videos with Three.js + Remotion, including captions and audio",
+  "scripts": {
+    "dev": "remotion studio",
+    "audio": "bash scripts/generate-audio.sh",
+    "render": "remotion render HelloThree out/hello-three.mp4",
+    "render:cpu": "remotion render HelloThree out/hello-three.mp4 --gl=swangle",
+    "still": "remotion still HelloThree out/hello-three.png --frame=120 --gl=swangle",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@react-three/drei": "10.7.9",
+    "@react-three/fiber": "9.8.2",
+    "@remotion/captions": "4.0.542",
+    "@remotion/cli": "4.0.542",
+    "@remotion/three": "4.0.542",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.542",
+    "three": "0.187.0",
+    "zod": "4.1.12"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.2",
+    "@types/three": "0.187.0",
+    "typescript": "5.9.3"
+  }
+}

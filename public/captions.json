@@ -1,0 +1,142 @@
+[
+  {
+    "text": "Welcome",
+    "startMs": 300,
+    "endMs": 800,
+    "timestampMs": 550,
+    "confidence": 1
+  },
+  {
+    "text": " to",
+    "startMs": 800,
+    "endMs": 1300,
+    "timestampMs": 1050,
+    "confidence": 1
+  },
+  {
+    "text": " 3D",
+    "startMs": 1300,
+    "endMs": 1800,
+    "timestampMs": 1550,
+    "confidence": 1
+  },
+  {
+    "text": " videos",
+    "startMs": 1800,
+    "endMs": 2300,
+    "timestampMs": 2050,
+    "confidence": 1
+  },
+  {
+    "text": " built",
+    "startMs": 2400,
+    "endMs": 2840,
+    "timestampMs": 2620,
+    "confidence": 1
+  },
+  {
+    "text": " with",
+    "startMs": 2840,
+    "endMs": 3280,
+    "timestampMs": 3060,
+    "confidence": 1
+  },
+  {
+    "text": " Three.js",
+    "startMs": 3280,
+    "endMs": 3720,
+    "timestampMs": 3500,
+    "confidence": 1
+  },
+  {
+    "text": " and",
+    "startMs": 3720,
+    "endMs": 4160,
+    "timestampMs": 3940,
+    "confidence": 1
+  },
+  {
+    "text": " Remotion.",
+    "startMs": 4160,
+    "endMs": 4600,
+    "timestampMs": 4380,
+    "confidence": 1
+  },
+  {
+    "text": " Every",
+    "startMs": 4800,
+    "endMs": 5167,
+    "timestampMs": 4983,
+    "confidence": 1
+  },
+  {
+    "text": " frame",
+    "startMs": 5167,
+    "endMs": 5534,
+    "timestampMs": 5350,
+    "confidence": 1
+  },
+  {
+    "text": " is",
+    "startMs": 5533,
+    "endMs": 5900,
+    "timestampMs": 5716,
+    "confidence": 1
+  },
+  {
+    "text": " rendered",
+    "startMs": 5900,
+    "endMs": 6267,
+    "timestampMs": 6083,
+    "confidence": 1
+  },
+  {
+    "text": " in",
+    "startMs": 6267,
+    "endMs": 6634,
+    "timestampMs": 6450,
+    "confidence": 1
+  },
+  {
+    "text": " React,",
+    "startMs": 6633,
+    "endMs": 7000,
+    "timestampMs": 6816,
+    "confidence": 1
+  },
+  {
+    "text": " with",
+    "startMs": 7100,
+    "endMs": 7600,
+    "timestampMs": 7350,
+    "confidence": 1
+  },
+  {
+    "text": " captions",
+    "startMs": 7600,
+    "endMs": 8100,
+    "timestampMs": 7850,
+    "confidence": 1
+  },
+  {
+    "text": " and",
+    "startMs": 8100,
+    "endMs": 8600,
+    "timestampMs": 8350,
+    "confidence": 1
+  },
+  {
+    "text": " audio",
+    "startMs": 8600,
+    "endMs": 9100,
+    "timestampMs": 8850,
+    "confidence": 1
+  },
+  {
+    "text": " included.",
+    "startMs": 9100,
+    "endMs": 9600,
+    "timestampMs": 9350,
+    "confidence": 1
+  }
+]
