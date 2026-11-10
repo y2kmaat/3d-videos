@@ -10,3 +10,12 @@ public/host/*.mp4
 public/host/*.mov
 public/host/*.glb
 public/host/*.gltf
+
+# Video editing workspace
+.venv
+raw/*
+references/*
+done/*
+!raw/.gitkeep
+!references/.gitkeep
+!done/.gitkeep

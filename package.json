@@ -30,6 +30,7 @@
   "devDependencies": {
     "@types/react": "19.2.2",
     "@types/three": "0.187.0",
+    "hyperframes": "^0.9.31",
     "typescript": "5.9.3"
   }
 }
