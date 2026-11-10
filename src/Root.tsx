@@ -54,6 +54,10 @@ export const RemotionRoot: React.FC = () => {
           { at: 7.2, gesture: "point" as const },
         ],
         accent: "#3d6bff",
+        host: "3d" as const,
+        hostImage: "host/host-portrait.png",
+        hostVideo: "host/host-talking.mp4",
+        hostFocusY: 25,
       }}
     />
     </>

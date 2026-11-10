@@ -43,6 +43,12 @@ REMOTION_BROWSER_EXECUTABLE=/path/to/chrome-headless-shell npm run render:cpu
 </ThreeCanvas>
 ```
 
+### Realistic (Pixar-style) host
+
+For a film-quality look, generate a portrait of yourself with an AI image model and use
+`CharacterShort` with `host: "portrait"` (still) or `host: "video"` (lip-synced clip).
+See **[docs/realistic-host.md](docs/realistic-host.md)** for the prompt and steps.
+
 ### Compositions
 
 | ID | Size | What it is |

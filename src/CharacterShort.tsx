@@ -13,6 +13,7 @@ import { HostCharacter, type Gesture } from "./character/HostCharacter";
 import { Captions } from "./components/Captions";
 import { SHORTS_FONT } from "./lib/fonts";
 import { CameraRig } from "./lib/CameraRig";
+import { PortraitHost } from "./components/PortraitHost";
 import { isTalkingAt, mouthOpenAt, useCaptions } from "./lib/useCaptions";
 
 // Layout (px, 1080x1920). Camera is framed so the character fills the stage band.
@@ -35,6 +36,17 @@ export const characterShortSchema = z.object({
   /** Gesture timeline: each entry starts at `at` seconds */
   gestures: z.array(z.object({ at: z.number(), gesture: gestureSchema })),
   accent: z.string(),
+  /**
+   * Which host to show:
+   * - "3d": the built-in procedural HostCharacter
+   * - "portrait": a still image (e.g. a Pixar-style AI render of you) in public/
+   * - "video": a talking-head clip (e.g. from a lip-sync tool) in public/; its own audio is used
+   */
+  host: z.enum(["3d", "portrait", "video"]),
+  hostImage: z.string(),
+  hostVideo: z.string(),
+  /** Crop focus for portrait/video, 0 = top, 100 = bottom */
+  hostFocusY: z.number().min(0).max(100),
 });
 
 export type CharacterShortProps = z.infer<typeof characterShortSchema>;
@@ -49,6 +61,10 @@ export const CharacterShort: React.FC<CharacterShortProps> = ({
   musicVolume,
   gestures,
   accent,
+  host,
+  hostImage,
+  hostVideo,
+  hostFocusY,
 }) => {
   const frame = useCurrentFrame();
   const { fps, width, height, durationInFrames } = useVideoConfig();
@@ -73,22 +89,33 @@ export const CharacterShort: React.FC<CharacterShortProps> = ({
     <AbsoluteFill style={{ backgroundColor: "#000", opacity: fadeOut }}>
       {/* Stage */}
       <AbsoluteFill style={{ top: STAGE_TOP, height: STAGE_BOTTOM - STAGE_TOP, background: `radial-gradient(circle at 50% 35%, ${accent}, #0b1a4a 55%, #050816)` }} />
-      <ThreeCanvas width={width} height={height} camera={{ fov: 30 }}>
-        {/* Frames the character from mid-torso to the top of the durag inside the stage band */}
-        <CameraRig position={[0, 1.78, 14]} target={[0, 1.78, 0]} />
-        <ambientLight intensity={0.55} />
-        <directionalLight position={[3, 5, 6]} intensity={2.3} />
-        <directionalLight position={[-4, 2, -3]} intensity={1.4} color="#8fb4ff" />
-        <pointLight position={[0, 3, 3]} intensity={8} color={accent} />
-        <HostCharacter
-          position={[0, -(1 - enter) * 3, 0]}
-          mouthOpen={mouthOpenAt(captions, ms)}
+      {host === "3d" ? (
+        <ThreeCanvas width={width} height={height} camera={{ fov: 30 }}>
+          {/* Frames the character from mid-torso to the top of the durag inside the stage band */}
+          <CameraRig position={[0, 1.78, 14]} target={[0, 1.78, 0]} />
+          <ambientLight intensity={0.55} />
+          <directionalLight position={[3, 5, 6]} intensity={2.3} />
+          <directionalLight position={[-4, 2, -3]} intensity={1.4} color="#8fb4ff" />
+          <pointLight position={[0, 3, 3]} intensity={8} color={accent} />
+          <HostCharacter
+            position={[0, -(1 - enter) * 3, 0]}
+            mouthOpen={mouthOpenAt(captions, ms)}
+            talking={isTalkingAt(captions, ms)}
+            gesture={gesture}
+            gestureStart={gestureStart}
+            lookX={Math.sin(frame / 50) * 0.15}
+          />
+        </ThreeCanvas>
+      ) : (
+        <PortraitHost
+          mode={host}
+          src={host === "video" ? hostVideo : hostImage}
           talking={isTalkingAt(captions, ms)}
-          gesture={gesture}
-          gestureStart={gestureStart}
-          lookX={Math.sin(frame / 50) * 0.15}
+          top={STAGE_TOP}
+          bottom={STAGE_BOTTOM}
+          focusY={hostFocusY}
         />
-      </ThreeCanvas>
+      )}
 
       {/* Fade the character's lower body into the caption area */}
       <AbsoluteFill style={{ top: STAGE_BOTTOM - 220, height: 220, background: "linear-gradient(transparent, #000)" }} />

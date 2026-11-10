@@ -1,3 +1,10 @@
 node_modules
 out
 .DS_Store
+# Personal host media (your AI portrait / talking clips). Remove these lines to commit them.
+public/host/*.png
+public/host/*.jpg
+public/host/*.jpeg
+public/host/*.webp
+public/host/*.mp4
+public/host/*.mov
