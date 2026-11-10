@@ -4,6 +4,7 @@ import { ThreeCanvas } from "@remotion/three";
 import { Scene } from "./scenes/Scene";
 import { Captions } from "./components/Captions";
 import { Title } from "./components/Title";
+import { useCaptions } from "./lib/useCaptions";
 
 export const helloThreeSchema = z.object({
   title: z.string(),
@@ -23,6 +24,7 @@ export const HelloThree: React.FC<Props> = ({
   accent,
 }) => {
   const { width, height } = useVideoConfig();
+  const captions = useCaptions(captionsFile);
 
   return (
     <AbsoluteFill style={{ backgroundColor: "#07060f" }}>
@@ -35,7 +37,7 @@ export const HelloThree: React.FC<Props> = ({
         <Scene accent={accent} />
       </ThreeCanvas>
       <Title title={title} subtitle={subtitle} accent={accent} />
-      <Captions file={captionsFile} accent={accent} />
+      <Captions captions={captions} accent={accent} />
       <Audio src={staticFile(audioFile)} />
     </AbsoluteFill>
   );

@@ -1,0 +1,142 @@
+[
+  {
+    "text": "Hey,",
+    "startMs": 400,
+    "endMs": 833,
+    "timestampMs": 617,
+    "confidence": 1
+  },
+  {
+    "text": " it's",
+    "startMs": 833,
+    "endMs": 1266,
+    "timestampMs": 1050,
+    "confidence": 1
+  },
+  {
+    "text": " me.",
+    "startMs": 1267,
+    "endMs": 1700,
+    "timestampMs": 1484,
+    "confidence": 1
+  },
+  {
+    "text": " This",
+    "startMs": 2000,
+    "endMs": 2367,
+    "timestampMs": 2183,
+    "confidence": 1
+  },
+  {
+    "text": " is",
+    "startMs": 2367,
+    "endMs": 2734,
+    "timestampMs": 2550,
+    "confidence": 1
+  },
+  {
+    "text": " my",
+    "startMs": 2733,
+    "endMs": 3100,
+    "timestampMs": 2916,
+    "confidence": 1
+  },
+  {
+    "text": " official",
+    "startMs": 3100,
+    "endMs": 3467,
+    "timestampMs": 3283,
+    "confidence": 1
+  },
+  {
+    "text": " 3D",
+    "startMs": 3467,
+    "endMs": 3834,
+    "timestampMs": 3650,
+    "confidence": 1
+  },
+  {
+    "text": " character.",
+    "startMs": 3833,
+    "endMs": 4200,
+    "timestampMs": 4016,
+    "confidence": 1
+  },
+  {
+    "text": " From",
+    "startMs": 4500,
+    "endMs": 4850,
+    "timestampMs": 4675,
+    "confidence": 1
+  },
+  {
+    "text": " now",
+    "startMs": 4850,
+    "endMs": 5200,
+    "timestampMs": 5025,
+    "confidence": 1
+  },
+  {
+    "text": " on,",
+    "startMs": 5200,
+    "endMs": 5550,
+    "timestampMs": 5375,
+    "confidence": 1
+  },
+  {
+    "text": " I'll",
+    "startMs": 5550,
+    "endMs": 5900,
+    "timestampMs": 5725,
+    "confidence": 1
+  },
+  {
+    "text": " be",
+    "startMs": 5900,
+    "endMs": 6250,
+    "timestampMs": 6075,
+    "confidence": 1
+  },
+  {
+    "text": " hosting",
+    "startMs": 6250,
+    "endMs": 6600,
+    "timestampMs": 6425,
+    "confidence": 1
+  },
+  {
+    "text": " every",
+    "startMs": 6800,
+    "endMs": 7280,
+    "timestampMs": 7040,
+    "confidence": 1
+  },
+  {
+    "text": " video",
+    "startMs": 7280,
+    "endMs": 7760,
+    "timestampMs": 7520,
+    "confidence": 1
+  },
+  {
+    "text": " on",
+    "startMs": 7760,
+    "endMs": 8240,
+    "timestampMs": 8000,
+    "confidence": 1
+  },
+  {
+    "text": " this",
+    "startMs": 8240,
+    "endMs": 8720,
+    "timestampMs": 8480,
+    "confidence": 1
+  },
+  {
+    "text": " channel.",
+    "startMs": 8720,
+    "endMs": 9200,
+    "timestampMs": 8960,
+    "confidence": 1
+  }
+]
