@@ -5,12 +5,21 @@
     {
       "at": 0.0,
       "layout": "host",
-      "gesture": "point"
+      "gesture": "point",
+      "chart": {
+        "pattern": "pullback",
+        "seed": 1
+      }
     },
     {
       "at": 2.34,
       "layout": "host",
-      "gesture": "explain"
+      "gesture": "explain",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 2,
+        "label": "PRICE \u00b7 DAILY"
+      }
     },
     {
       "at": 3.16,
@@ -19,7 +28,12 @@
       "items": [
         "Catch one price swing",
         "No watching all day"
-      ]
+      ],
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 3,
+        "label": "ONE SWING \u00b7 DAYS TO WEEKS"
+      }
     },
     {
       "at": 7.46,
@@ -28,7 +42,12 @@
       "title": "Daily + *4H* charts",
       "items": [
         "Check once or twice a day"
-      ]
+      ],
+      "chart": {
+        "pattern": "pullback",
+        "seed": 4,
+        "label": "PRICE \u00b7 4H"
+      }
     },
     {
       "at": 11.24,
@@ -38,24 +57,44 @@
         "Find the trend",
         "Wait for the dip",
         "Enter on the bounce"
-      ]
+      ],
+      "chart": {
+        "pattern": "pullback",
+        "seed": 5,
+        "label": "PULLBACK \u2192 BOUNCE",
+        "stop": false
+      }
     },
     {
       "at": 14.78,
       "layout": "host",
       "gesture": "point",
-      "flash": true
+      "flash": true,
+      "chart": {
+        "pattern": "pullback",
+        "seed": 6,
+        "label": "STOP BELOW SWING LOW"
+      }
     },
     {
       "at": 17.2,
       "layout": "split",
       "gesture": "explain",
-      "title": "Less *screen time*"
+      "title": "Less *screen time*",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 7,
+        "label": "PRICE \u00b7 DAILY"
+      }
     },
     {
       "at": 20.18,
       "layout": "card",
-      "title": "Education, *not* financial advice"
+      "title": "Education, *not* financial advice",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 8
+      }
     }
   ],
   "keywords": [

@@ -13,12 +13,22 @@
     {
       "cue": "",
       "layout": "host",
-      "gesture": "point"
+      "gesture": "point",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 1,
+        "label": "PRICE \u00b7 5M"
+      }
     },
     {
       "cue": "Here's the playbook",
       "layout": "host",
-      "gesture": "explain"
+      "gesture": "explain",
+      "chart": {
+        "pattern": "pullback",
+        "seed": 2,
+        "label": "PRICE \u00b7 5M"
+      }
     },
     {
       "cue": "Every trade",
@@ -27,14 +37,24 @@
       "items": [
         "No overnight risk",
         "Flat by the close"
-      ]
+      ],
+      "chart": {
+        "pattern": "scalp",
+        "seed": 3,
+        "label": "OPEN \u2192 CLOSE \u00b7 SAME DAY"
+      }
     },
     {
       "cue": "Most day traders",
       "layout": "card",
       "title": "The first *2 hours*",
       "number": "2",
-      "numberLabel": "hours after the open"
+      "numberLabel": "hours after the open",
+      "chart": {
+        "pattern": "breakout",
+        "seed": 4,
+        "label": "FIRST 2 HOURS \u00b7 HIGH VOLUME"
+      }
     },
     {
       "cue": "They plan",
@@ -45,13 +65,23 @@
         "Entry",
         "Exit",
         "Stop loss"
-      ]
+      ],
+      "chart": {
+        "pattern": "pullback",
+        "seed": 5,
+        "label": "ENTRY \u00b7 EXIT \u00b7 STOP"
+      }
     },
     {
       "cue": "And they set",
       "layout": "host",
       "gesture": "point",
-      "flash": true
+      "flash": true,
+      "chart": {
+        "pattern": "downtrend",
+        "seed": 6,
+        "label": "DAILY LOSS LIMIT"
+      }
     },
     {
       "cue": "Hit it",
@@ -59,18 +89,32 @@
       "title": "Daily loss *limit*",
       "items": [
         "Hit it = done for the day"
-      ]
+      ],
+      "chart": {
+        "pattern": "downtrend",
+        "seed": 7,
+        "label": "LIMIT HIT \u00b7 DONE"
+      }
     },
     {
       "cue": "Day trading takes",
       "layout": "split",
       "gesture": "explain",
-      "title": "Time, focus, *capital*"
+      "title": "Time, focus, *capital*",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 8,
+        "label": "PRICE \u00b7 15M"
+      }
     },
     {
       "cue": "This is education",
       "layout": "card",
-      "title": "Education, *not* financial advice"
+      "title": "Education, *not* financial advice",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 9
+      }
     }
   ]
 }

@@ -1,4 +1,11 @@
-# Style guide — v1
+# Style guide — v2 (faceless trading series)
+
+> **v2 layout (TradingShort), overrides §4–§5 where they differ:** the host is on screen the whole time
+> (bottom band, y 940–1920); **all text sits at the top** (title at y 150, Anton 84 px; word captions
+> at y 305); between them an animated candlestick chart panel (x 40–1040, y 372–982, radius 28)
+> illustrates each beat and **slides to a new chart on every beat** (9 frames, ease-in-out).
+> Candles: up `#3DD9C1`, down `#FF4D5E`; overlays (support/resistance, stop, MA, RSI, news) fade in
+> after the candles draw (≈1.1 s). Bullet chips sit top-left of the panel, number badges top-right.
 
 Format: **a mix of talking to camera and voiceover over screen recordings / graphics.**
 Vertical short-form (TikTok / Reels / Shorts).

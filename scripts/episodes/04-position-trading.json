@@ -13,12 +13,21 @@
     {
       "cue": "",
       "layout": "host",
-      "gesture": "point"
+      "gesture": "point",
+      "chart": {
+        "pattern": "long-term",
+        "seed": 1
+      }
     },
     {
       "cue": "Here's how",
       "layout": "host",
-      "gesture": "explain"
+      "gesture": "explain",
+      "chart": {
+        "pattern": "long-term",
+        "seed": 2,
+        "label": "PRICE \u00b7 MONTHLY"
+      }
     },
     {
       "cue": "They start",
@@ -27,13 +36,22 @@
       "items": [
         "Weekly + monthly charts",
         "Fundamentals"
-      ]
+      ],
+      "chart": {
+        "pattern": "long-term",
+        "seed": 3
+      }
     },
     {
       "cue": "They ride",
       "layout": "split",
       "gesture": "explain",
-      "title": "Ignore the *noise*"
+      "title": "Ignore the *noise*",
+      "chart": {
+        "pattern": "scalp",
+        "seed": 4,
+        "label": "DAILY NOISE \u00b7 IGNORE IT"
+      }
     },
     {
       "cue": "Because they hold",
@@ -42,24 +60,44 @@
       "items": [
         "Wider stop loss",
         "Smaller position"
-      ]
+      ],
+      "chart": {
+        "pattern": "long-term",
+        "seed": 5,
+        "stop": true,
+        "label": "WIDE STOP"
+      }
     },
     {
       "cue": "It's the closest",
       "layout": "host",
       "gesture": "point",
-      "flash": true
+      "flash": true,
+      "chart": {
+        "pattern": "long-term",
+        "seed": 6,
+        "label": "EXIT PLAN"
+      }
     },
     {
       "cue": "Patience is",
       "layout": "split",
       "gesture": "explain",
-      "title": "Patience *wins*"
+      "title": "Patience *wins*",
+      "chart": {
+        "pattern": "long-term",
+        "seed": 7,
+        "label": "PRICE \u00b7 WEEKLY \u00b7 PATIENCE"
+      }
     },
     {
       "cue": "This is education",
       "layout": "card",
-      "title": "Education, *not* financial advice"
+      "title": "Education, *not* financial advice",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 8
+      }
     }
   ]
 }

@@ -13,12 +13,21 @@
     {
       "cue": "",
       "layout": "host",
-      "gesture": "point"
+      "gesture": "point",
+      "chart": {
+        "pattern": "pullback",
+        "seed": 1
+      }
     },
     {
       "cue": "Here's why",
       "layout": "host",
-      "gesture": "explain"
+      "gesture": "explain",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 2,
+        "label": "PRICE \u00b7 DAILY"
+      }
     },
     {
       "cue": "You hold",
@@ -27,7 +36,12 @@
       "items": [
         "Catch one price swing",
         "No watching all day"
-      ]
+      ],
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 3,
+        "label": "ONE SWING \u00b7 DAYS TO WEEKS"
+      }
     },
     {
       "cue": "You use daily",
@@ -36,7 +50,12 @@
       "title": "Daily + *4H* charts",
       "items": [
         "Check once or twice a day"
-      ]
+      ],
+      "chart": {
+        "pattern": "pullback",
+        "seed": 4,
+        "label": "PRICE \u00b7 4H"
+      }
     },
     {
       "cue": "Look for a pullback",
@@ -46,24 +65,44 @@
         "Find the trend",
         "Wait for the dip",
         "Enter on the bounce"
-      ]
+      ],
+      "chart": {
+        "pattern": "pullback",
+        "seed": 5,
+        "label": "PULLBACK \u2192 BOUNCE",
+        "stop": false
+      }
     },
     {
       "cue": "Put your stop",
       "layout": "host",
       "gesture": "point",
-      "flash": true
+      "flash": true,
+      "chart": {
+        "pattern": "pullback",
+        "seed": 6,
+        "label": "STOP BELOW SWING LOW"
+      }
     },
     {
       "cue": "Fewer trades",
       "layout": "split",
       "gesture": "explain",
-      "title": "Less *screen time*"
+      "title": "Less *screen time*",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 7,
+        "label": "PRICE \u00b7 DAILY"
+      }
     },
     {
       "cue": "This is education",
       "layout": "card",
-      "title": "Education, *not* financial advice"
+      "title": "Education, *not* financial advice",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 8
+      }
     }
   ]
 }

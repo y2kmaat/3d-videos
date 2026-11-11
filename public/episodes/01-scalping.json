@@ -5,12 +5,20 @@
     {
       "at": 0.0,
       "layout": "host",
-      "gesture": "point"
+      "gesture": "point",
+      "chart": {
+        "pattern": "scalp",
+        "seed": 1
+      }
     },
     {
       "at": 3.24,
       "layout": "host",
-      "gesture": "explain"
+      "gesture": "explain",
+      "chart": {
+        "pattern": "scalp",
+        "seed": 2
+      }
     },
     {
       "at": 4.74,
@@ -19,7 +27,12 @@
       "items": [
         "1 to 5 minute charts",
         "Hold seconds to minutes"
-      ]
+      ],
+      "chart": {
+        "pattern": "scalp",
+        "seed": 3,
+        "volume": true
+      }
     },
     {
       "at": 8.78,
@@ -29,7 +42,11 @@
       "items": [
         "A few ticks or pips",
         "Many trades a day"
-      ]
+      ],
+      "chart": {
+        "pattern": "scalp",
+        "seed": 4
+      }
     },
     {
       "at": 11.94,
@@ -38,24 +55,43 @@
       "items": [
         "Tight spreads",
         "Low fees"
-      ]
+      ],
+      "chart": {
+        "pattern": "scalp",
+        "seed": 5,
+        "label": "PRICE \u00b7 1M \u00b7 TIGHT SPREAD"
+      }
     },
     {
       "at": 16.86,
       "layout": "host",
       "gesture": "point",
-      "flash": true
+      "flash": true,
+      "chart": {
+        "pattern": "downtrend",
+        "seed": 6,
+        "label": "ONE BAD TRADE"
+      }
     },
     {
       "at": 21.9,
       "layout": "split",
       "gesture": "explain",
-      "title": "Not for *beginners*"
+      "title": "Not for *beginners*",
+      "chart": {
+        "pattern": "news",
+        "seed": 7,
+        "label": "FAST + INTENSE"
+      }
     },
     {
       "at": 25.04,
       "layout": "card",
-      "title": "Education, *not* financial advice"
+      "title": "Education, *not* financial advice",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 8
+      }
     }
   ],
   "keywords": [

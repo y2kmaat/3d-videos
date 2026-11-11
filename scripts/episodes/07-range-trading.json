@@ -13,22 +13,41 @@
     {
       "cue": "",
       "layout": "host",
-      "gesture": "point"
+      "gesture": "point",
+      "chart": {
+        "pattern": "range",
+        "seed": 1
+      }
     },
     {
       "cue": "Here's how",
       "layout": "host",
-      "gesture": "explain"
+      "gesture": "explain",
+      "chart": {
+        "pattern": "range",
+        "seed": 2,
+        "label": "PRICE \u00b7 1H \u00b7 SIDEWAYS"
+      }
     },
     {
       "cue": "Find support",
       "layout": "card",
-      "title": "*Support* = the floor"
+      "title": "*Support* = the floor",
+      "chart": {
+        "pattern": "range",
+        "seed": 3,
+        "label": "FLOOR = SUPPORT"
+      }
     },
     {
       "cue": "Then find resistance",
       "layout": "card",
-      "title": "*Resistance* = the ceiling"
+      "title": "*Resistance* = the ceiling",
+      "chart": {
+        "pattern": "range",
+        "seed": 4,
+        "label": "CEILING = RESISTANCE"
+      }
     },
     {
       "cue": "Buy near",
@@ -38,24 +57,43 @@
       "items": [
         "Buy near support",
         "Sell near resistance"
-      ]
+      ],
+      "chart": {
+        "pattern": "range",
+        "seed": 5,
+        "label": "BUY LOW \u00b7 SELL HIGH"
+      }
     },
     {
       "cue": "Put your stop",
       "layout": "host",
       "gesture": "point",
-      "flash": true
+      "flash": true,
+      "chart": {
+        "pattern": "breakout",
+        "seed": 6,
+        "label": "RANGE BREAKS \u2192 STOP"
+      }
     },
     {
       "cue": "Range trading works",
       "layout": "split",
       "gesture": "explain",
-      "title": "Best in *calm* markets"
+      "title": "Best in *calm* markets",
+      "chart": {
+        "pattern": "range",
+        "seed": 7,
+        "label": "CALM MARKET"
+      }
     },
     {
       "cue": "This is education",
       "layout": "card",
-      "title": "Education, *not* financial advice"
+      "title": "Education, *not* financial advice",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 8
+      }
     }
   ]
 }

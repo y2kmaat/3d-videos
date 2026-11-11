@@ -13,12 +13,21 @@
     {
       "cue": "",
       "layout": "host",
-      "gesture": "point"
+      "gesture": "point",
+      "chart": {
+        "pattern": "news",
+        "seed": 1
+      }
     },
     {
       "cue": "Here's how",
       "layout": "host",
-      "gesture": "explain"
+      "gesture": "explain",
+      "chart": {
+        "pattern": "news",
+        "seed": 2,
+        "label": "PRICE \u00b7 5M"
+      }
     },
     {
       "cue": "They check",
@@ -27,7 +36,12 @@
       "items": [
         "Interest rate decisions",
         "Jobs reports"
-      ]
+      ],
+      "chart": {
+        "pattern": "range",
+        "seed": 3,
+        "label": "BEFORE THE RELEASE"
+      }
     },
     {
       "cue": "Right at the release",
@@ -37,25 +51,45 @@
       "items": [
         "Spreads widen",
         "Price whips both ways"
-      ]
+      ],
+      "chart": {
+        "pattern": "news",
+        "seed": 4,
+        "volume": true,
+        "label": "AT THE RELEASE"
+      }
     },
     {
       "cue": "So many traders",
       "layout": "card",
       "title": "Let it *settle*",
       "number": "15",
-      "numberLabel": "minutes"
+      "numberLabel": "minutes",
+      "chart": {
+        "pattern": "news",
+        "seed": 5,
+        "label": "WAIT ~15 MINUTES"
+      }
     },
     {
       "cue": "And they size",
       "layout": "host",
       "gesture": "point",
-      "flash": true
+      "flash": true,
+      "chart": {
+        "pattern": "news",
+        "seed": 6,
+        "label": "SIZE DOWN \u00b7 VOLATILE"
+      }
     },
     {
       "cue": "This is education",
       "layout": "card",
-      "title": "Education, *not* financial advice"
+      "title": "Education, *not* financial advice",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 7
+      }
     }
   ]
 }

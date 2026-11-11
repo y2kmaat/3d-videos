@@ -21,7 +21,7 @@ import { mouthAt, mouthRoundAt, talkingAt, useVoice, type Voice } from "./lib/us
 /* Props                                                               */
 /* ------------------------------------------------------------------ */
 
-const beatSchema = z.object({
+export const beatSchema = z.object({
   /** Seconds from the start */
   at: z.number(),
   /** host = full-frame character, split = graphic on top + host card, card = full graphic */
@@ -162,7 +162,7 @@ export const FacelessShort: React.FC<FacelessShortProps> = ({
 /* Host                                                                */
 /* ------------------------------------------------------------------ */
 
-const HostCanvas: React.FC<{
+export const HostCanvas: React.FC<{
   width: number;
   height: number;
   camera: [number, number, number];
@@ -182,13 +182,13 @@ const CHARACTER_CAMS: Record<"full" | "card", [Vec3, Vec3]> = {
   card: [[0, 2.0, 8.5], [0, 1.75, 0]],
 };
 // Realistic avatar: scaled to 3.6 units tall, feet on the floor. Frames head + chest.
-const GLB_HEIGHT = 3.6;
+export const GLB_HEIGHT = 3.6;
 const GLB_CAMS: Record<"full" | "card", [Vec3, Vec3]> = {
   full: [[0, 3.0, 4.8], [0, 2.92, 0]],
   card: [[0, 3.2, 3.1], [0, 3.14, 0]],
 };
 
-const HostScene: React.FC<{
+export const HostScene: React.FC<{
   voice: Voice | null;
   sec: number;
   gesture: "idle" | "wave" | "point" | "explain";
@@ -244,7 +244,7 @@ const accentText = (text: string) =>
     ),
   );
 
-const Headline: React.FC<{ text: string; frame: number; y: number; size?: number }> = ({ text, frame, y, size = 92 }) => {
+export const Headline: React.FC<{ text: string; frame: number; y: number; size?: number }> = ({ text, frame, y, size = 92 }) => {
   const p = interpolate(frame, [0, 6], [0, 1], { easing: ease, extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   return (
     <div
@@ -271,7 +271,7 @@ const Headline: React.FC<{ text: string; frame: number; y: number; size?: number
 };
 
 /** 1–2 words at a time on a dark box (style.md §5). */
-const WordCaptions: React.FC<{ voice: Voice | null; keywords: string[]; y: number }> = ({ voice, keywords, y }) => {
+export const WordCaptions: React.FC<{ voice: Voice | null; keywords: string[]; y: number }> = ({ voice, keywords, y }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   if (!voice) return null;
@@ -396,7 +396,7 @@ const Graphic: React.FC<{ beat: Beat; beatFrame: number; compact?: boolean }> = 
   );
 };
 
-const CountUp: React.FC<{ value: string; label?: string; beatFrame: number; top: number }> = ({ value, label, beatFrame, top }) => {
+export const CountUp: React.FC<{ value: string; label?: string; beatFrame: number; top: number }> = ({ value, label, beatFrame, top }) => {
   const m = value.match(/^(\D*)(\d+)(.*)$/);
   const target = m ? Number(m[2]) : 0;
   const n = Math.round(interpolate(beatFrame, [4, 16], [0, target], { easing: ease, extrapolateLeft: "clamp", extrapolateRight: "clamp" }));

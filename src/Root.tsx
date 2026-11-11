@@ -3,6 +3,7 @@ import { HelloThree, helloThreeSchema } from "./HelloThree";
 import { CharacterFaceTest, CharacterTurnaround } from "./CharacterTurnaround";
 import { CharacterShort, characterShortSchema } from "./CharacterShort";
 import { FacelessShort, calculateFacelessMetadata, facelessShortSchema } from "./FacelessShort";
+import { TradingShort, calculateTradingMetadata, tradingShortSchema } from "./TradingShort";
 
 export const FPS = 30;
 
@@ -82,6 +83,31 @@ export const RemotionRoot: React.FC = () => {
           { at: 26.3, layout: "card" as const, title: "Education, *not* financial advice" },
         ],
         keywords: ["lose", "one", "percent", "stop", "journal", "demo", "skill", "three"],
+        musicFile: "music.mp3",
+        musicVolume: 0.125,
+      }}
+    />
+    <Composition
+      id="TradingShort"
+      component={TradingShort}
+      durationInFrames={30 * FPS}
+      fps={FPS}
+      width={1080}
+      height={1920}
+      schema={tradingShortSchema}
+      calculateMetadata={calculateTradingMetadata}
+      defaultProps={{
+        voice: "06-breakout-trading",
+        hook: "Catch the *breakout*",
+        beats: [
+          { at: 0, layout: "host" as const, gesture: "point" as const, chart: { pattern: "breakout" as const } },
+          { at: 3.92, layout: "card" as const, title: "Find the *ceiling*", items: ["A level hit several times"], chart: { pattern: "range" as const } },
+          { at: 10.02, layout: "card" as const, title: "Volume *spike*", chart: { pattern: "breakout" as const, volume: true } },
+          { at: 13.86, layout: "split" as const, title: "Days to *weeks*", number: "3", numberLabel: "months", chart: { pattern: "rsi" as const } },
+          { at: 18.44, layout: "host" as const, gesture: "point" as const, flash: true, chart: { pattern: "ma-cross" as const } },
+          { at: 20.9, layout: "card" as const, title: "Education, *not* financial advice", chart: { pattern: "news" as const } },
+        ],
+        keywords: ["breaks", "ceiling", "close", "volume", "retest", "stop"],
         musicFile: "music.mp3",
         musicVolume: 0.125,
       }}

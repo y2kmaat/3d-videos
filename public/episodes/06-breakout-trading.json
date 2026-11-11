@@ -5,12 +5,21 @@
     {
       "at": 0.0,
       "layout": "host",
-      "gesture": "point"
+      "gesture": "point",
+      "chart": {
+        "pattern": "breakout",
+        "seed": 1
+      }
     },
     {
       "at": 2.04,
       "layout": "host",
-      "gesture": "explain"
+      "gesture": "explain",
+      "chart": {
+        "pattern": "breakout",
+        "seed": 2,
+        "label": "PRICE \u00b7 1H"
+      }
     },
     {
       "at": 3.92,
@@ -18,13 +27,23 @@
       "title": "Find the *ceiling*",
       "items": [
         "A level hit several times"
-      ]
+      ],
+      "chart": {
+        "pattern": "range",
+        "seed": 3,
+        "label": "THE CEILING"
+      }
     },
     {
       "at": 7.12,
       "layout": "split",
       "gesture": "explain",
-      "title": "Wait for the *close*"
+      "title": "Wait for the *close*",
+      "chart": {
+        "pattern": "breakout",
+        "seed": 4,
+        "label": "CANDLE CLOSES ABOVE"
+      }
     },
     {
       "at": 10.02,
@@ -33,7 +52,13 @@
       "items": [
         "Real breakouts have volume",
         "No volume = suspicious"
-      ]
+      ],
+      "chart": {
+        "pattern": "breakout",
+        "seed": 5,
+        "volume": true,
+        "label": "VOLUME SPIKE"
+      }
     },
     {
       "at": 13.86,
@@ -42,18 +67,32 @@
       "title": "Close or *retest*",
       "items": [
         "Stop just below the level"
-      ]
+      ],
+      "chart": {
+        "pattern": "breakout",
+        "seed": 6,
+        "label": "RETEST \u00b7 STOP BELOW"
+      }
     },
     {
       "at": 18.44,
       "layout": "host",
       "gesture": "point",
-      "flash": true
+      "flash": true,
+      "chart": {
+        "pattern": "range",
+        "seed": 7,
+        "label": "FAKE BREAKOUTS HAPPEN"
+      }
     },
     {
       "at": 20.9,
       "layout": "card",
-      "title": "Education, *not* financial advice"
+      "title": "Education, *not* financial advice",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 8
+      }
     }
   ],
   "keywords": [

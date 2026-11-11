@@ -5,22 +5,41 @@
     {
       "at": 0.0,
       "layout": "host",
-      "gesture": "point"
+      "gesture": "point",
+      "chart": {
+        "pattern": "range",
+        "seed": 1
+      }
     },
     {
       "at": 2.72,
       "layout": "host",
-      "gesture": "explain"
+      "gesture": "explain",
+      "chart": {
+        "pattern": "range",
+        "seed": 2,
+        "label": "PRICE \u00b7 1H \u00b7 SIDEWAYS"
+      }
     },
     {
       "at": 4.4,
       "layout": "card",
-      "title": "*Support* = the floor"
+      "title": "*Support* = the floor",
+      "chart": {
+        "pattern": "range",
+        "seed": 3,
+        "label": "FLOOR = SUPPORT"
+      }
     },
     {
       "at": 7.54,
       "layout": "card",
-      "title": "*Resistance* = the ceiling"
+      "title": "*Resistance* = the ceiling",
+      "chart": {
+        "pattern": "range",
+        "seed": 4,
+        "label": "CEILING = RESISTANCE"
+      }
     },
     {
       "at": 11.34,
@@ -30,24 +49,43 @@
       "items": [
         "Buy near support",
         "Sell near resistance"
-      ]
+      ],
+      "chart": {
+        "pattern": "range",
+        "seed": 5,
+        "label": "BUY LOW \u00b7 SELL HIGH"
+      }
     },
     {
       "at": 13.98,
       "layout": "host",
       "gesture": "point",
-      "flash": true
+      "flash": true,
+      "chart": {
+        "pattern": "breakout",
+        "seed": 6,
+        "label": "RANGE BREAKS \u2192 STOP"
+      }
     },
     {
       "at": 18.84,
       "layout": "split",
       "gesture": "explain",
-      "title": "Best in *calm* markets"
+      "title": "Best in *calm* markets",
+      "chart": {
+        "pattern": "range",
+        "seed": 7,
+        "label": "CALM MARKET"
+      }
     },
     {
       "at": 21.84,
       "layout": "card",
-      "title": "Education, *not* financial advice"
+      "title": "Education, *not* financial advice",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 8
+      }
     }
   ],
   "keywords": [

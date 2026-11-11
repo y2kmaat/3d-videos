@@ -13,7 +13,11 @@
     {
       "cue": "",
       "layout": "host",
-      "gesture": "point"
+      "gesture": "point",
+      "chart": {
+        "pattern": "rsi",
+        "seed": 1
+      }
     },
     {
       "cue": "RSI stands",
@@ -21,44 +25,78 @@
       "title": "Relative Strength *Index*",
       "items": [
         "Runs from 0 to 100"
-      ]
+      ],
+      "chart": {
+        "pattern": "rsi",
+        "seed": 2,
+        "label": "RSI \u00b7 0 TO 100"
+      }
     },
     {
       "cue": "Above 70",
       "layout": "card",
       "title": "Too *hot*",
       "number": "70",
-      "numberLabel": "overbought"
+      "numberLabel": "overbought",
+      "chart": {
+        "pattern": "rsi",
+        "seed": 3,
+        "label": "ABOVE 70 \u00b7 OVERBOUGHT"
+      }
     },
     {
       "cue": "Below 30",
       "layout": "card",
       "title": "Too *cold*",
       "number": "30",
-      "numberLabel": "oversold"
+      "numberLabel": "oversold",
+      "chart": {
+        "pattern": "rsi",
+        "seed": 4,
+        "label": "BELOW 30 \u00b7 OVERSOLD"
+      }
     },
     {
       "cue": "Mean reversion",
       "layout": "split",
       "gesture": "explain",
-      "title": "The *snap back*"
+      "title": "The *snap back*",
+      "chart": {
+        "pattern": "rsi",
+        "seed": 5,
+        "label": "SNAP BACK"
+      }
     },
     {
       "cue": "But in a strong",
       "layout": "host",
       "gesture": "point",
-      "flash": true
+      "flash": true,
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 6,
+        "label": "STRONG TREND \u00b7 STAYS OVERBOUGHT"
+      }
     },
     {
       "cue": "So wait",
       "layout": "split",
       "gesture": "explain",
-      "title": "Wait for *confirmation*"
+      "title": "Wait for *confirmation*",
+      "chart": {
+        "pattern": "rsi",
+        "seed": 7,
+        "label": "WAIT FOR CONFIRMATION"
+      }
     },
     {
       "cue": "This is education",
       "layout": "card",
-      "title": "Education, *not* financial advice"
+      "title": "Education, *not* financial advice",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 8
+      }
     }
   ]
 }

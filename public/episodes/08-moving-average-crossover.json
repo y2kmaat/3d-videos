@@ -5,12 +5,20 @@
     {
       "at": 0.0,
       "layout": "host",
-      "gesture": "point"
+      "gesture": "point",
+      "chart": {
+        "pattern": "ma-cross",
+        "seed": 1
+      }
     },
     {
       "at": 2.9,
       "layout": "host",
-      "gesture": "explain"
+      "gesture": "explain",
+      "chart": {
+        "pattern": "ma-cross",
+        "seed": 2
+      }
     },
     {
       "at": 5.06,
@@ -19,35 +27,64 @@
       "items": [
         "20 day = fast",
         "50 day = slow"
-      ]
+      ],
+      "chart": {
+        "pattern": "ma-cross",
+        "seed": 3,
+        "label": "20 DAY (FAST) \u00b7 50 DAY (SLOW)"
+      }
     },
     {
       "at": 9.48,
       "layout": "split",
       "gesture": "explain",
-      "title": "Cross up = *bullish*"
+      "title": "Cross up = *bullish*",
+      "chart": {
+        "pattern": "ma-cross",
+        "seed": 4,
+        "label": "FAST CROSSES ABOVE"
+      }
     },
     {
       "at": 13.56,
       "layout": "card",
-      "title": "Cross down = *bearish*"
+      "title": "Cross down = *bearish*",
+      "chart": {
+        "pattern": "downtrend",
+        "seed": 5,
+        "label": "FAST CROSSES BELOW"
+      }
     },
     {
       "at": 16.3,
       "layout": "host",
       "gesture": "point",
-      "flash": true
+      "flash": true,
+      "chart": {
+        "pattern": "range",
+        "seed": 6,
+        "label": "SIDEWAYS = FALSE SIGNALS"
+      }
     },
     {
       "at": 20.72,
       "layout": "split",
       "gesture": "explain",
-      "title": "Use it *with* a trend"
+      "title": "Use it *with* a trend",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 7,
+        "label": "USE IT WITH A TREND"
+      }
     },
     {
       "at": 22.02,
       "layout": "card",
-      "title": "Education, *not* financial advice"
+      "title": "Education, *not* financial advice",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 8
+      }
     }
   ],
   "keywords": [

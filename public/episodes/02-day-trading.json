@@ -5,12 +5,22 @@
     {
       "at": 0.0,
       "layout": "host",
-      "gesture": "point"
+      "gesture": "point",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 1,
+        "label": "PRICE \u00b7 5M"
+      }
     },
     {
       "at": 2.22,
       "layout": "host",
-      "gesture": "explain"
+      "gesture": "explain",
+      "chart": {
+        "pattern": "pullback",
+        "seed": 2,
+        "label": "PRICE \u00b7 5M"
+      }
     },
     {
       "at": 3.3,
@@ -19,14 +29,24 @@
       "items": [
         "No overnight risk",
         "Flat by the close"
-      ]
+      ],
+      "chart": {
+        "pattern": "scalp",
+        "seed": 3,
+        "label": "OPEN \u2192 CLOSE \u00b7 SAME DAY"
+      }
     },
     {
       "at": 7.16,
       "layout": "card",
       "title": "The first *2 hours*",
       "number": "2",
-      "numberLabel": "hours after the open"
+      "numberLabel": "hours after the open",
+      "chart": {
+        "pattern": "breakout",
+        "seed": 4,
+        "label": "FIRST 2 HOURS \u00b7 HIGH VOLUME"
+      }
     },
     {
       "at": 11.8,
@@ -37,13 +57,23 @@
         "Entry",
         "Exit",
         "Stop loss"
-      ]
+      ],
+      "chart": {
+        "pattern": "pullback",
+        "seed": 5,
+        "label": "ENTRY \u00b7 EXIT \u00b7 STOP"
+      }
     },
     {
       "at": 15.36,
       "layout": "host",
       "gesture": "point",
-      "flash": true
+      "flash": true,
+      "chart": {
+        "pattern": "downtrend",
+        "seed": 6,
+        "label": "DAILY LOSS LIMIT"
+      }
     },
     {
       "at": 17.14,
@@ -51,18 +81,32 @@
       "title": "Daily loss *limit*",
       "items": [
         "Hit it = done for the day"
-      ]
+      ],
+      "chart": {
+        "pattern": "downtrend",
+        "seed": 7,
+        "label": "LIMIT HIT \u00b7 DONE"
+      }
     },
     {
       "at": 18.82,
       "layout": "split",
       "gesture": "explain",
-      "title": "Time, focus, *capital*"
+      "title": "Time, focus, *capital*",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 8,
+        "label": "PRICE \u00b7 15M"
+      }
     },
     {
       "at": 21.74,
       "layout": "card",
-      "title": "Education, *not* financial advice"
+      "title": "Education, *not* financial advice",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 9
+      }
     }
   ],
   "keywords": [

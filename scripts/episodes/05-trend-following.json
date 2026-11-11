@@ -13,12 +13,21 @@
     {
       "cue": "",
       "layout": "host",
-      "gesture": "point"
+      "gesture": "point",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 1
+      }
     },
     {
       "cue": "Here's how",
       "layout": "host",
-      "gesture": "explain"
+      "gesture": "explain",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 2,
+        "label": "PRICE \u00b7 DAILY"
+      }
     },
     {
       "cue": "First, find",
@@ -27,37 +36,65 @@
       "items": [
         "Higher highs + higher lows = up",
         "Lower highs + lower lows = down"
-      ]
+      ],
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 3,
+        "label": "HIGHER HIGHS + HIGHER LOWS"
+      }
     },
     {
       "cue": "Then only trade",
       "layout": "split",
       "gesture": "explain",
-      "title": "Trade *with* it"
+      "title": "Trade *with* it",
+      "chart": {
+        "pattern": "downtrend",
+        "seed": 4,
+        "label": "DON'T FIGHT IT"
+      }
     },
     {
       "cue": "Use a moving",
       "layout": "card",
       "title": "Your *guide*",
       "number": "50",
-      "numberLabel": "day moving average"
+      "numberLabel": "day moving average",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 5,
+        "label": "PRICE \u00b7 DAILY \u00b7 50 MA"
+      }
     },
     {
       "cue": "Price above",
       "layout": "split",
       "gesture": "explain",
-      "title": "Above = *buy*, below = *sell*"
+      "title": "Above = *buy*, below = *sell*",
+      "chart": {
+        "pattern": "ma-cross",
+        "seed": 6
+      }
     },
     {
       "cue": "And get out",
       "layout": "host",
       "gesture": "point",
-      "flash": true
+      "flash": true,
+      "chart": {
+        "pattern": "downtrend",
+        "seed": 7,
+        "label": "STRUCTURE BREAKS \u2192 EXIT"
+      }
     },
     {
       "cue": "This is education",
       "layout": "card",
-      "title": "Education, *not* financial advice"
+      "title": "Education, *not* financial advice",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 8
+      }
     }
   ]
 }

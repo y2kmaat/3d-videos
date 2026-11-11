@@ -13,12 +13,20 @@
     {
       "cue": "",
       "layout": "host",
-      "gesture": "point"
+      "gesture": "point",
+      "chart": {
+        "pattern": "ma-cross",
+        "seed": 1
+      }
     },
     {
       "cue": "It's called",
       "layout": "host",
-      "gesture": "explain"
+      "gesture": "explain",
+      "chart": {
+        "pattern": "ma-cross",
+        "seed": 2
+      }
     },
     {
       "cue": "Take a fast",
@@ -27,35 +35,64 @@
       "items": [
         "20 day = fast",
         "50 day = slow"
-      ]
+      ],
+      "chart": {
+        "pattern": "ma-cross",
+        "seed": 3,
+        "label": "20 DAY (FAST) \u00b7 50 DAY (SLOW)"
+      }
     },
     {
       "cue": "When the fast",
       "layout": "split",
       "gesture": "explain",
-      "title": "Cross up = *bullish*"
+      "title": "Cross up = *bullish*",
+      "chart": {
+        "pattern": "ma-cross",
+        "seed": 4,
+        "label": "FAST CROSSES ABOVE"
+      }
     },
     {
       "cue": "When it crosses below",
       "layout": "card",
-      "title": "Cross down = *bearish*"
+      "title": "Cross down = *bearish*",
+      "chart": {
+        "pattern": "downtrend",
+        "seed": 5,
+        "label": "FAST CROSSES BELOW"
+      }
     },
     {
       "cue": "It's simple",
       "layout": "host",
       "gesture": "point",
-      "flash": true
+      "flash": true,
+      "chart": {
+        "pattern": "range",
+        "seed": 6,
+        "label": "SIDEWAYS = FALSE SIGNALS"
+      }
     },
     {
       "cue": "So use it",
       "layout": "split",
       "gesture": "explain",
-      "title": "Use it *with* a trend"
+      "title": "Use it *with* a trend",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 7,
+        "label": "USE IT WITH A TREND"
+      }
     },
     {
       "cue": "This is education",
       "layout": "card",
-      "title": "Education, *not* financial advice"
+      "title": "Education, *not* financial advice",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 8
+      }
     }
   ]
 }

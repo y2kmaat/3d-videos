@@ -5,12 +5,21 @@
     {
       "at": 0.0,
       "layout": "host",
-      "gesture": "point"
+      "gesture": "point",
+      "chart": {
+        "pattern": "news",
+        "seed": 1
+      }
     },
     {
       "at": 2.22,
       "layout": "host",
-      "gesture": "explain"
+      "gesture": "explain",
+      "chart": {
+        "pattern": "news",
+        "seed": 2,
+        "label": "PRICE \u00b7 5M"
+      }
     },
     {
       "at": 3.98,
@@ -19,7 +28,12 @@
       "items": [
         "Interest rate decisions",
         "Jobs reports"
-      ]
+      ],
+      "chart": {
+        "pattern": "range",
+        "seed": 3,
+        "label": "BEFORE THE RELEASE"
+      }
     },
     {
       "at": 9.18,
@@ -29,25 +43,45 @@
       "items": [
         "Spreads widen",
         "Price whips both ways"
-      ]
+      ],
+      "chart": {
+        "pattern": "news",
+        "seed": 4,
+        "volume": true,
+        "label": "AT THE RELEASE"
+      }
     },
     {
       "at": 13.44,
       "layout": "card",
       "title": "Let it *settle*",
       "number": "15",
-      "numberLabel": "minutes"
+      "numberLabel": "minutes",
+      "chart": {
+        "pattern": "news",
+        "seed": 5,
+        "label": "WAIT ~15 MINUTES"
+      }
     },
     {
       "at": 18.48,
       "layout": "host",
       "gesture": "point",
-      "flash": true
+      "flash": true,
+      "chart": {
+        "pattern": "news",
+        "seed": 6,
+        "label": "SIZE DOWN \u00b7 VOLATILE"
+      }
     },
     {
       "at": 21.7,
       "layout": "card",
-      "title": "Education, *not* financial advice"
+      "title": "Education, *not* financial advice",
+      "chart": {
+        "pattern": "uptrend",
+        "seed": 7
+      }
     }
   ],
   "keywords": [
