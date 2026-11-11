@@ -32,7 +32,7 @@ The channel is faceless: the 3D host (below) presents every video, with an AI vo
 
 1. **Write the script** in `scripts/episodes/<name>.txt` (plain text, ~35 s ≈ 140 words).
 2. **Make the voice:** `npm run voice -- scripts/episodes/<name>.txt`
-   Generates the voice (ElevenLabs), cuts pauses > 0.18 s, normalises to −14 LUFS, and writes
+   Generates the voice (ElevenLabs, channel voice "Deion"; needs the Starter plan or higher), cuts pauses > 0.18 s, normalises to −14 LUFS, and writes
    `public/voice/<name>.mp3`, `.captions.json` (word timings) and `.mouth.json` (lip-sync from the audio).
    Add `--engine espeak` for a free robotic test voice, `--voice <id>` to pick another ElevenLabs voice.
 3. **Lay out the beats** in `FacelessShort`'s props (Remotion Studio or `src/Root.tsx`): `voice`, `hook`,

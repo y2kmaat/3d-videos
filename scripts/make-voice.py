@@ -23,8 +23,9 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "public" / "voice"
 FPS = 30
-# A clear, confident, conversational male narrator. Change with --voice.
-DEFAULT_VOICE = "pNInz6obpgDQGcFmaJgB"  # ElevenLabs premade voice "Adam"
+# Channel voice: "Deion - Deep, Rhythmic, and Smooth" (ElevenLabs Voice Library, African American male).
+# Library voices need a paid ElevenLabs plan (Starter or higher). Change with --voice.
+DEFAULT_VOICE = "MuWZEhlucXEKPv3WaubS"
 
 
 def sh(*cmd):
