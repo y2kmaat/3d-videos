@@ -4,6 +4,15 @@ There are two ways to get a realistic host. Option A gives a true 3D animated ve
 
 ## Option A: realistic 3D avatar (`host: "glb"`)
 
+> **Faceless trading series:** drop the file at `public/host/host-avatar.glb`, then rebuild and
+> re-render. `scripts/build-episode.py` switches every episode to the avatar automatically
+> (`"host": "glb"`), and `FacelessShort` frames it head-and-chest. Without a body animation the arms
+> are lowered from the T-pose into a relaxed pose automatically; with a Mixamo clip, set
+> `"hostAnimation"` in the episode JSON. Lip-sync, blinks and eye/brow motion run either way.
+>
+> Note (2026): Ready Player Me shut down in January 2026. Photo-based creators that still export
+> GLB include Avaturn and Avatar SDK's MetaPerson; check that the export includes ARKit blendshapes.
+
 The project animates any rigged `.glb` avatar in real 3D: lip-sync from your captions, blinking,
 eye movement, smiles, head motion, camera framing, plus any body animation inside the file.
 

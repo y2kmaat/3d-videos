@@ -94,6 +94,12 @@ export const GlbHost: React.FC<GlbHostProps> = ({
     return mx;
   }, [animation, gltf]);
 
+  // No body clip: lower the arms from the T/A-pose into a relaxed pose, once.
+  useMemo(() => {
+    if (mixer) return;
+    relaxArms(gltf.scene);
+  }, [mixer, gltf.scene]);
+
   // ---- Drive the face for this frame ----
   if (mixer) mixer.setTime(t);
 
@@ -130,12 +136,11 @@ export const GlbHost: React.FC<GlbHostProps> = ({
     viseme_e: mouthOpen * 0.3 * v(6.7),
     viseme_sil: 1 - mouthOpen,
   };
-  if (!mixer) {
-    for (const { mesh, idx } of faces) {
-      for (const [name, value] of Object.entries(targets)) {
-        const i = idx.get(name);
-        if (i !== undefined) mesh.morphTargetInfluences![i] = Math.max(0, Math.min(1, value));
-      }
+  // Applied after the body clip, so lip-sync and blinks work with or without an animation.
+  for (const { mesh, idx } of faces) {
+    for (const [name, value] of Object.entries(targets)) {
+      const i = idx.get(name);
+      if (i !== undefined) mesh.morphTargetInfluences![i] = Math.max(0, Math.min(1, value));
     }
   }
 
@@ -164,3 +169,52 @@ const normalise = (name: string) =>
     .replace(/[_.]L$/i, "Left")
     .replace(/[_.]R$/i, "Right")
     .toLowerCase();
+
+/** Find a bone by common rig names (Mixamo "mixamorig:LeftArm", Avaturn/RPM "LeftArm", "upperarm_l"...). */
+const findBone = (root: THREE.Object3D, patterns: RegExp[]) => {
+  let found: THREE.Bone | null = null;
+  root.traverse((o) => {
+    if (!found && (o as THREE.Bone).isBone && patterns.some((p) => p.test(o.name))) found = o as THREE.Bone;
+  });
+  return found as THREE.Bone | null;
+};
+
+/**
+ * Rotates each upper arm so it points down along the body (slightly out and forward),
+ * and bends the elbows a little. Works for any rig orientation: the rotation is solved
+ * in world space from where the elbow currently is.
+ */
+const relaxArms = (root: THREE.Object3D) => {
+  root.updateMatrixWorld(true);
+  for (const side of ["Left", "Right"] as const) {
+    const l = side === "Left";
+    const arm = findBone(root, [new RegExp(`(^|:)${side}Arm$`, "i"), new RegExp(`upper_?arm[_.]?${l ? "l" : "r"}$`, "i")]);
+    const fore = findBone(root, [new RegExp(`(^|:)${side}ForeArm$`, "i"), new RegExp(`(fore|lower)_?arm[_.]?${l ? "l" : "r"}$`, "i")]);
+    if (!arm || !fore || !arm.parent) continue;
+    const shoulder = arm.getWorldPosition(new THREE.Vector3());
+    const elbow = fore.getWorldPosition(new THREE.Vector3());
+    const current = elbow.clone().sub(shoulder).normalize();
+    // Outward = the side the elbow is on now (T-pose arms point sideways).
+    const out = Math.sign(current.x) || (l ? 1 : -1);
+    const wanted = new THREE.Vector3(0.18 * out, -1, 0.08).normalize();
+    const delta = new THREE.Quaternion().setFromUnitVectors(current, wanted);
+    // Apply the world-space delta to the bone's world rotation, then convert back to local.
+    const parentWorld = arm.parent.getWorldQuaternion(new THREE.Quaternion());
+    const armWorld = arm.getWorldQuaternion(new THREE.Quaternion());
+    arm.quaternion.copy(parentWorld.clone().invert().multiply(delta.multiply(armWorld)));
+    root.updateMatrixWorld(true);
+    // Slight elbow bend toward the front.
+    const hand = fore.children.find((c) => (c as THREE.Bone).isBone);
+    if (hand) {
+      const e = fore.getWorldPosition(new THREE.Vector3());
+      const h = hand.getWorldPosition(new THREE.Vector3());
+      const cur = h.sub(e).normalize();
+      const bent = new THREE.Vector3(0.1 * out, -0.85, 0.5).normalize();
+      const d = new THREE.Quaternion().setFromUnitVectors(cur, bent);
+      const pw = fore.parent!.getWorldQuaternion(new THREE.Quaternion());
+      const fw = fore.getWorldQuaternion(new THREE.Quaternion());
+      fore.quaternion.copy(pw.invert().multiply(d.multiply(fw)));
+      root.updateMatrixWorld(true);
+    }
+  }
+};

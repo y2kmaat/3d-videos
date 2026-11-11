@@ -11,6 +11,7 @@ import {
 } from "remotion";
 import { ThreeCanvas } from "@remotion/three";
 import { HostCharacter, HostLights } from "./character/HostCharacter";
+import { GlbHost } from "./character/GlbHost";
 import { CameraRig } from "./lib/CameraRig";
 import { CAPTION_FONT, SHORTS_FONT } from "./lib/fonts";
 import { STYLE } from "./lib/style";
@@ -48,6 +49,12 @@ export const facelessShortSchema = z.object({
   musicFile: z.string(),
   /** 0.125 ≈ 18 dB under the voice (style.md §9) */
   musicVolume: z.number().min(0).max(1),
+  /** "3d" = built-in character, "glb" = realistic avatar file (see docs/realistic-host.md) */
+  host: z.enum(["3d", "glb"]).optional(),
+  /** Avatar file in public/ (host "glb") */
+  hostModel: z.string().optional(),
+  /** Body animation clip inside the .glb, e.g. a Mixamo idle/talking loop (optional) */
+  hostAnimation: z.string().optional(),
 });
 
 export type FacelessShortProps = z.infer<typeof facelessShortSchema>;
@@ -63,7 +70,17 @@ export const calculateFacelessMetadata: CalculateMetadataFunction<FacelessShortP
 /* Composition                                                         */
 /* ------------------------------------------------------------------ */
 
-export const FacelessShort: React.FC<FacelessShortProps> = ({ voice: voiceName, hook, beats, keywords, musicFile, musicVolume }) => {
+export const FacelessShort: React.FC<FacelessShortProps> = ({
+  voice: voiceName,
+  hook,
+  beats,
+  keywords,
+  musicFile,
+  musicVolume,
+  host: hostType = "3d",
+  hostModel = "host/host-avatar.glb",
+  hostAnimation = "",
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const voice = useVoice(voiceName);
@@ -78,8 +95,16 @@ export const FacelessShort: React.FC<FacelessShortProps> = ({ voice: voiceName, 
   const punch = hostCount % 2 === 0 ? 1.12 : 1;
 
   const host = (
-    <HostScene voice={voice} sec={sec} gesture={beat.gesture ?? "explain"} gestureStart={Math.round(beat.at * fps)} />
+    <HostScene
+      voice={voice}
+      sec={sec}
+      gesture={beat.gesture ?? "explain"}
+      gestureStart={Math.round(beat.at * fps)}
+      glb={hostType === "glb" ? { src: hostModel, animation: hostAnimation } : null}
+    />
   );
+  // Camera framing per host type: [position, target] for the full-frame and the split-card shots.
+  const cams = hostType === "glb" ? GLB_CAMS : CHARACTER_CAMS;
 
   const flash = beat.flash ? interpolate(beatFrame, [0, 4], [0.3, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) : 0;
 
@@ -87,7 +112,7 @@ export const FacelessShort: React.FC<FacelessShortProps> = ({ voice: voiceName, 
     <AbsoluteFill style={{ backgroundColor: STYLE.bg }}>
       {beat.layout === "host" && (
         <AbsoluteFill style={{ transform: `scale(${punch})`, background: "radial-gradient(circle at 50% 38%, #23202a, #0B0B0F 65%)" }}>
-          <HostCanvas width={1080} height={1920} camera={[0, 2.35, 11]} target={[0, 2.35, 0]}>
+          <HostCanvas width={1080} height={1920} camera={cams.full[0]} target={cams.full[1]}>
             {host}
           </HostCanvas>
         </AbsoluteFill>
@@ -111,7 +136,7 @@ export const FacelessShort: React.FC<FacelessShortProps> = ({ voice: voiceName, 
               background: "radial-gradient(circle at 50% 30%, #23202a, #111216 70%)",
             }}
           >
-            <HostCanvas width={800} height={820} camera={[0, 2.0, 8.5]} target={[0, 1.75, 0]}>
+            <HostCanvas width={800} height={820} camera={cams.card[0]} target={cams.card[1]}>
               {host}
             </HostCanvas>
           </div>
@@ -151,13 +176,39 @@ const HostCanvas: React.FC<{
   </ThreeCanvas>
 );
 
+type Vec3 = [number, number, number];
+const CHARACTER_CAMS: Record<"full" | "card", [Vec3, Vec3]> = {
+  full: [[0, 2.35, 11], [0, 2.35, 0]],
+  card: [[0, 2.0, 8.5], [0, 1.75, 0]],
+};
+// Realistic avatar: scaled to 3.6 units tall, feet on the floor. Frames head + chest.
+const GLB_HEIGHT = 3.6;
+const GLB_CAMS: Record<"full" | "card", [Vec3, Vec3]> = {
+  full: [[0, 3.0, 4.8], [0, 2.92, 0]],
+  card: [[0, 3.2, 3.1], [0, 3.14, 0]],
+};
+
 const HostScene: React.FC<{
   voice: Voice | null;
   sec: number;
   gesture: "idle" | "wave" | "point" | "explain";
   gestureStart: number;
-}> = ({ voice, sec, gesture, gestureStart }) => {
+  glb: { src: string; animation: string } | null;
+}> = ({ voice, sec, gesture, gestureStart, glb }) => {
   const ms = sec * 1000;
+  if (glb) {
+    return (
+      <GlbHost
+        src={glb.src}
+        animation={glb.animation || undefined}
+        mouthOpen={mouthAt(voice, sec)}
+        talking={talkingAt(voice, ms)}
+        lookX={Math.sin(sec * 0.6) * 0.12}
+        height={GLB_HEIGHT}
+        position={[0, GLB_HEIGHT / 2, 0]}
+      />
+    );
+  }
   return (
     <HostCharacter
       mouthOpen={mouthAt(voice, sec)}

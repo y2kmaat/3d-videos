@@ -88,6 +88,9 @@ def main():
         "musicFile": ep.get("musicFile", "music.mp3"),
         "musicVolume": ep.get("musicVolume", 0.125),
     }
+    # Realistic avatar: used automatically once public/host/host-avatar.glb exists.
+    if (ROOT / "public" / "host" / "host-avatar.glb").exists():
+        props.update({"host": "glb", "hostModel": "host/host-avatar.glb", "hostAnimation": ep.get("hostAnimation", "")})
     out = ROOT / "public" / "episodes" / f"{name}.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(props, indent=2))
