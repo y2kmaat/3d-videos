@@ -26,6 +26,20 @@ If Remotion can't download its headless Chrome (for example, on a locked-down ne
 REMOTION_BROWSER_EXECUTABLE=/path/to/chrome-headless-shell npm run render:cpu
 ```
 
+## Faceless videos (main workflow)
+
+The channel is faceless: the 3D host (below) presents every video, with an AI voice. Editing rules live in **[style.md](style.md)**.
+
+1. **Write the script** in `scripts/episodes/<name>.txt` (plain text, ~35 s ≈ 140 words).
+2. **Make the voice:** `npm run voice -- scripts/episodes/<name>.txt`
+   Generates the voice (ElevenLabs), cuts pauses > 0.18 s, normalises to −14 LUFS, and writes
+   `public/voice/<name>.mp3`, `.captions.json` (word timings) and `.mouth.json` (lip-sync from the audio).
+   Add `--engine espeak` for a free robotic test voice, `--voice <id>` to pick another ElevenLabs voice.
+3. **Lay out the beats** in `FacelessShort`'s props (Remotion Studio or `src/Root.tsx`): `voice`, `hook`,
+   `beats` (`host` / `split` / `card`, gestures, titles with the *accent* word in stars, lists, count-up numbers),
+   `keywords` (amber in captions). The video length follows the voice automatically.
+4. **Render:** `npm run render:faceless` → `done/faceless.mp4`
+
 ## Official host character
 
 `src/character/HostCharacter.tsx` is the channel's official on-screen character: a stylized 3D version of the channel owner (black durag, shoulder-length locs, goatee, dusty-rose tee). **Every video that uses a graphic character should render `<HostCharacter />`**, so the look stays consistent and any update applies everywhere.

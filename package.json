@@ -11,7 +11,10 @@
     "still": "remotion still HelloThree out/hello-three.png --frame=120 --gl=swangle",
     "typecheck": "tsc --noEmit",
     "render:short": "remotion render CharacterShort out/character-short.mp4 --gl=swangle",
-    "render:turnaround": "remotion render CharacterTurnaround out/character-turnaround.mp4 --gl=swangle"
+    "render:turnaround": "remotion render CharacterTurnaround out/character-turnaround.mp4 --gl=swangle",
+    "voice": ".venv/bin/python scripts/make-voice.py",
+    "render:faceless": "remotion render FacelessShort done/faceless.mp4 --gl=swangle --crf=18",
+    "render:face-test": "remotion render CharacterFaceTest out/face-test.mp4 --gl=swangle"
   },
   "dependencies": {
     "@react-three/drei": "10.7.9",

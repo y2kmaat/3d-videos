@@ -10,3 +10,12 @@ loadFont({
   url: staticFile("fonts/Anton-Regular.woff2"),
   weight: "400",
 });
+
+// Caption font (style.md §5): Inter Bold, bundled (SIL OFL, see fonts/Inter-OFL.txt).
+export const CAPTION_FONT = "Inter";
+
+loadFont({
+  family: CAPTION_FONT,
+  url: staticFile("fonts/Inter-Bold.woff2"),
+  weight: "700",
+});
