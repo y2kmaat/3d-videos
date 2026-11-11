@@ -35,7 +35,7 @@ def sh(*cmd):
 def tts_elevenlabs(text: str, voice: str, out_path: Path):
     key = os.environ.get("ELEVENLABS_API_KEY", "proxy-injected")
     req = urllib.request.Request(
-        f"https://api.elevenlabs.io/v1/text-to-speech/{voice}?output_format=mp3_44100_192",
+        f"https://api.elevenlabs.io/v1/text-to-speech/{voice}?output_format=mp3_44100_128",
         data=json.dumps({
             "text": text,
             "model_id": "eleven_multilingual_v2",
