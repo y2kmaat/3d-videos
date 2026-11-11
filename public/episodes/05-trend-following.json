@@ -1,0 +1,65 @@
+{
+  "voice": "05-trend-following",
+  "hook": "The trend is your *friend*",
+  "beats": [
+    {
+      "at": 0.0,
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "at": 2.34,
+      "layout": "host",
+      "gesture": "explain"
+    },
+    {
+      "at": 4.26,
+      "layout": "card",
+      "title": "Find the *trend*",
+      "items": [
+        "Higher highs + higher lows = up",
+        "Lower highs + lower lows = down"
+      ]
+    },
+    {
+      "at": 9.94,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Trade *with* it"
+    },
+    {
+      "at": 12.62,
+      "layout": "card",
+      "title": "Your *guide*",
+      "number": "50",
+      "numberLabel": "day moving average"
+    },
+    {
+      "at": 16.24,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Above = *buy*, below = *sell*"
+    },
+    {
+      "at": 20.12,
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "at": 21.86,
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ],
+  "keywords": [
+    "trend",
+    "up",
+    "down",
+    "direction",
+    "fifty",
+    "breaks"
+  ],
+  "musicFile": "music.mp3",
+  "musicVolume": 0.125
+}

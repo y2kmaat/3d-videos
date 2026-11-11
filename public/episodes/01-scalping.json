@@ -1,0 +1,71 @@
+{
+  "voice": "01-scalping",
+  "hook": "Trading for *seconds*",
+  "beats": [
+    {
+      "at": 0.0,
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "at": 3.24,
+      "layout": "host",
+      "gesture": "explain"
+    },
+    {
+      "at": 4.74,
+      "layout": "card",
+      "title": "Tiny *timeframes*",
+      "items": [
+        "1 to 5 minute charts",
+        "Hold seconds to minutes"
+      ]
+    },
+    {
+      "at": 8.78,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Small *moves*",
+      "items": [
+        "A few ticks or pips",
+        "Many trades a day"
+      ]
+    },
+    {
+      "at": 11.94,
+      "layout": "card",
+      "title": "Costs *matter*",
+      "items": [
+        "Tight spreads",
+        "Low fees"
+      ]
+    },
+    {
+      "at": 16.86,
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "at": 21.9,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Not for *beginners*"
+    },
+    {
+      "at": 25.04,
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ],
+  "keywords": [
+    "seconds",
+    "minutes",
+    "small",
+    "costs",
+    "discipline",
+    "beginners"
+  ],
+  "musicFile": "music.mp3",
+  "musicVolume": 0.125
+}

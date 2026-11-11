@@ -1,0 +1,66 @@
+{
+  "voice": "09-rsi",
+  "hook": "Running *out of steam*?",
+  "beats": [
+    {
+      "at": 0.0,
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "at": 3.42,
+      "layout": "card",
+      "title": "Relative Strength *Index*",
+      "items": [
+        "Runs from 0 to 100"
+      ]
+    },
+    {
+      "at": 8.18,
+      "layout": "card",
+      "title": "Too *hot*",
+      "number": "70",
+      "numberLabel": "overbought"
+    },
+    {
+      "at": 11.12,
+      "layout": "card",
+      "title": "Too *cold*",
+      "number": "30",
+      "numberLabel": "oversold"
+    },
+    {
+      "at": 13.5,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "The *snap back*"
+    },
+    {
+      "at": 17.46,
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "at": 20.82,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Wait for *confirmation*"
+    },
+    {
+      "at": 23.14,
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ],
+  "keywords": [
+    "RSI",
+    "70",
+    "overbought",
+    "30",
+    "oversold",
+    "confirmation"
+  ],
+  "musicFile": "music.mp3",
+  "musicVolume": 0.125
+}

@@ -1,0 +1,67 @@
+{
+  "voice": "04-position-trading",
+  "hook": "Hold for *months*",
+  "beats": [
+    {
+      "at": 0.0,
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "at": 3.04,
+      "layout": "host",
+      "gesture": "explain"
+    },
+    {
+      "at": 3.94,
+      "layout": "card",
+      "title": "The *big picture*",
+      "items": [
+        "Weekly + monthly charts",
+        "Fundamentals"
+      ]
+    },
+    {
+      "at": 8.78,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Ignore the *noise*"
+    },
+    {
+      "at": 11.8,
+      "layout": "card",
+      "title": "Wider stops, *smaller* size",
+      "items": [
+        "Wider stop loss",
+        "Smaller position"
+      ]
+    },
+    {
+      "at": 16.28,
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "at": 19.82,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Patience *wins*"
+    },
+    {
+      "at": 21.46,
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ],
+  "keywords": [
+    "months",
+    "years",
+    "weekly",
+    "noise",
+    "wider",
+    "patience"
+  ],
+  "musicFile": "music.mp3",
+  "musicVolume": 0.125
+}

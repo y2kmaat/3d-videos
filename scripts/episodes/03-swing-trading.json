@@ -1,0 +1,69 @@
+{
+  "script": "Swing trading is made for people with a day job. Here's why. You hold trades for a few days to a few weeks, catching one swing in the price. You use daily and four hour charts, so you only check them once or twice a day. Look for a pullback in a trend, and enter when price bounces. Put your stop below the last swing low. Fewer trades, less screen time, more patience. This is education, not financial advice.",
+  "hook": "Trading with a *day job*",
+  "keywords": [
+    "days",
+    "weeks",
+    "daily",
+    "pullback",
+    "stop",
+    "patience"
+  ],
+  "beats": [
+    {
+      "cue": "",
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "cue": "Here's why",
+      "layout": "host",
+      "gesture": "explain"
+    },
+    {
+      "cue": "You hold",
+      "layout": "card",
+      "title": "Days to *weeks*",
+      "items": [
+        "Catch one price swing",
+        "No watching all day"
+      ]
+    },
+    {
+      "cue": "You use daily",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Daily + *4H* charts",
+      "items": [
+        "Check once or twice a day"
+      ]
+    },
+    {
+      "cue": "Look for a pullback",
+      "layout": "card",
+      "title": "Buy the *pullback*",
+      "items": [
+        "Find the trend",
+        "Wait for the dip",
+        "Enter on the bounce"
+      ]
+    },
+    {
+      "cue": "Put your stop",
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "cue": "Fewer trades",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Less *screen time*"
+    },
+    {
+      "cue": "This is education",
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ]
+}

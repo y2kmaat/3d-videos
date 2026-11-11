@@ -1,0 +1,63 @@
+{
+  "voice": "08-moving-average-crossover",
+  "hook": "Two lines, *one signal*",
+  "beats": [
+    {
+      "at": 0.0,
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "at": 2.9,
+      "layout": "host",
+      "gesture": "explain"
+    },
+    {
+      "at": 5.06,
+      "layout": "card",
+      "title": "Fast vs *slow*",
+      "items": [
+        "20 day = fast",
+        "50 day = slow"
+      ]
+    },
+    {
+      "at": 9.48,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Cross up = *bullish*"
+    },
+    {
+      "at": 13.56,
+      "layout": "card",
+      "title": "Cross down = *bearish*"
+    },
+    {
+      "at": 16.3,
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "at": 20.72,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Use it *with* a trend"
+    },
+    {
+      "at": 22.02,
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ],
+  "keywords": [
+    "crossover",
+    "fast",
+    "slow",
+    "up",
+    "down",
+    "lags"
+  ],
+  "musicFile": "music.mp3",
+  "musicVolume": 0.125
+}

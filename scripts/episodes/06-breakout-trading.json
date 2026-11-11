@@ -1,0 +1,67 @@
+{
+  "script": "When price breaks out, it can move fast. Here's how breakout traders catch it. Find a level the price has hit several times, like a ceiling. Wait for a candle to close above it, not just poke through. Then check the volume. A real breakout usually comes with a spike in volume. Enter on the close, or on a retest of the level, with your stop just below it. Fake breakouts happen, so always use a stop. This is education, not financial advice.",
+  "hook": "Catch the *breakout*",
+  "keywords": [
+    "breaks",
+    "ceiling",
+    "close",
+    "volume",
+    "retest",
+    "stop"
+  ],
+  "beats": [
+    {
+      "cue": "",
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "cue": "Here's how",
+      "layout": "host",
+      "gesture": "explain"
+    },
+    {
+      "cue": "Find a level",
+      "layout": "card",
+      "title": "Find the *ceiling*",
+      "items": [
+        "A level hit several times"
+      ]
+    },
+    {
+      "cue": "Wait for a candle",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Wait for the *close*"
+    },
+    {
+      "cue": "Then check",
+      "layout": "card",
+      "title": "Volume *spike*",
+      "items": [
+        "Real breakouts have volume",
+        "No volume = suspicious"
+      ]
+    },
+    {
+      "cue": "Enter on",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Close or *retest*",
+      "items": [
+        "Stop just below the level"
+      ]
+    },
+    {
+      "cue": "Fake breakouts",
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "cue": "This is education",
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ]
+}

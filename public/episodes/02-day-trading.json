@@ -1,0 +1,78 @@
+{
+  "voice": "02-day-trading",
+  "hook": "No trades *overnight*",
+  "beats": [
+    {
+      "at": 0.0,
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "at": 2.22,
+      "layout": "host",
+      "gesture": "explain"
+    },
+    {
+      "at": 3.3,
+      "layout": "card",
+      "title": "In and out *same day*",
+      "items": [
+        "No overnight risk",
+        "Flat by the close"
+      ]
+    },
+    {
+      "at": 7.16,
+      "layout": "card",
+      "title": "The first *2 hours*",
+      "number": "2",
+      "numberLabel": "hours after the open"
+    },
+    {
+      "at": 11.8,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Plan it *first*",
+      "items": [
+        "Entry",
+        "Exit",
+        "Stop loss"
+      ]
+    },
+    {
+      "at": 15.36,
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "at": 17.14,
+      "layout": "card",
+      "title": "Daily loss *limit*",
+      "items": [
+        "Hit it = done for the day"
+      ]
+    },
+    {
+      "at": 18.82,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Time, focus, *capital*"
+    },
+    {
+      "at": 21.74,
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ],
+  "keywords": [
+    "overnight",
+    "same",
+    "two",
+    "plan",
+    "limit",
+    "focus"
+  ],
+  "musicFile": "music.mp3",
+  "musicVolume": 0.125
+}

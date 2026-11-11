@@ -1,0 +1,65 @@
+{
+  "script": "Position traders hold for months, sometimes years. Here's how they think. They start with the big picture, the weekly and monthly charts, and the fundamentals behind them. They ride long term trends and ignore the daily noise. Because they hold so long, they use wider stops and smaller position sizes. It's the closest thing to investing, but with a clear exit plan. Patience is the whole strategy. This is education, not financial advice.",
+  "hook": "Hold for *months*",
+  "keywords": [
+    "months",
+    "years",
+    "weekly",
+    "noise",
+    "wider",
+    "patience"
+  ],
+  "beats": [
+    {
+      "cue": "",
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "cue": "Here's how",
+      "layout": "host",
+      "gesture": "explain"
+    },
+    {
+      "cue": "They start",
+      "layout": "card",
+      "title": "The *big picture*",
+      "items": [
+        "Weekly + monthly charts",
+        "Fundamentals"
+      ]
+    },
+    {
+      "cue": "They ride",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Ignore the *noise*"
+    },
+    {
+      "cue": "Because they hold",
+      "layout": "card",
+      "title": "Wider stops, *smaller* size",
+      "items": [
+        "Wider stop loss",
+        "Smaller position"
+      ]
+    },
+    {
+      "cue": "It's the closest",
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "cue": "Patience is",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Patience *wins*"
+    },
+    {
+      "cue": "This is education",
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ]
+}

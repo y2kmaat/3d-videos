@@ -1,0 +1,63 @@
+{
+  "script": "The trend is your friend, until it ends. Here's how trend following works. First, find the trend. Higher highs and higher lows means up. Lower highs and lower lows means down. Then only trade in that direction, never against it. Use a moving average, like the fifty day, as your guide. Price above it, look for buys. Price below it, look for sells. And get out when the structure breaks. This is education, not financial advice.",
+  "hook": "The trend is your *friend*",
+  "keywords": [
+    "trend",
+    "up",
+    "down",
+    "direction",
+    "fifty",
+    "breaks"
+  ],
+  "beats": [
+    {
+      "cue": "",
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "cue": "Here's how",
+      "layout": "host",
+      "gesture": "explain"
+    },
+    {
+      "cue": "First, find",
+      "layout": "card",
+      "title": "Find the *trend*",
+      "items": [
+        "Higher highs + higher lows = up",
+        "Lower highs + lower lows = down"
+      ]
+    },
+    {
+      "cue": "Then only trade",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Trade *with* it"
+    },
+    {
+      "cue": "Use a moving",
+      "layout": "card",
+      "title": "Your *guide*",
+      "number": "50",
+      "numberLabel": "day moving average"
+    },
+    {
+      "cue": "Price above",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Above = *buy*, below = *sell*"
+    },
+    {
+      "cue": "And get out",
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "cue": "This is education",
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ]
+}

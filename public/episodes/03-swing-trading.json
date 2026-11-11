@@ -1,0 +1,71 @@
+{
+  "voice": "03-swing-trading",
+  "hook": "Trading with a *day job*",
+  "beats": [
+    {
+      "at": 0.0,
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "at": 2.34,
+      "layout": "host",
+      "gesture": "explain"
+    },
+    {
+      "at": 3.16,
+      "layout": "card",
+      "title": "Days to *weeks*",
+      "items": [
+        "Catch one price swing",
+        "No watching all day"
+      ]
+    },
+    {
+      "at": 7.46,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Daily + *4H* charts",
+      "items": [
+        "Check once or twice a day"
+      ]
+    },
+    {
+      "at": 11.24,
+      "layout": "card",
+      "title": "Buy the *pullback*",
+      "items": [
+        "Find the trend",
+        "Wait for the dip",
+        "Enter on the bounce"
+      ]
+    },
+    {
+      "at": 14.78,
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "at": 17.2,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Less *screen time*"
+    },
+    {
+      "at": 20.18,
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ],
+  "keywords": [
+    "days",
+    "weeks",
+    "daily",
+    "pullback",
+    "stop",
+    "patience"
+  ],
+  "musicFile": "music.mp3",
+  "musicVolume": 0.125
+}

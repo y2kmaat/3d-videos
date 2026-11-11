@@ -1,0 +1,61 @@
+{
+  "script": "Two lines on a chart can tell you when a trend is changing. It's called a moving average crossover. Take a fast average, like the twenty day, and a slow one, like the fifty day. When the fast line crosses above the slow line, momentum is turning up. When it crosses below, momentum is turning down. It's simple, but it lags, and in a sideways market it gives a lot of false signals. So use it with a trend. This is education, not financial advice.",
+  "hook": "Two lines, *one signal*",
+  "keywords": [
+    "crossover",
+    "fast",
+    "slow",
+    "up",
+    "down",
+    "lags"
+  ],
+  "beats": [
+    {
+      "cue": "",
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "cue": "It's called",
+      "layout": "host",
+      "gesture": "explain"
+    },
+    {
+      "cue": "Take a fast",
+      "layout": "card",
+      "title": "Fast vs *slow*",
+      "items": [
+        "20 day = fast",
+        "50 day = slow"
+      ]
+    },
+    {
+      "cue": "When the fast",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Cross up = *bullish*"
+    },
+    {
+      "cue": "When it crosses below",
+      "layout": "card",
+      "title": "Cross down = *bearish*"
+    },
+    {
+      "cue": "It's simple",
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "cue": "So use it",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Use it *with* a trend"
+    },
+    {
+      "cue": "This is education",
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ]
+}

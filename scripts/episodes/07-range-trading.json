@@ -1,0 +1,61 @@
+{
+  "script": "Markets spend a lot of their time going sideways. Here's how to trade the range. Find support, the floor where price keeps bouncing up. Then find resistance, the ceiling where it keeps getting rejected. Buy near support, sell near resistance. Put your stop just outside the range, because when a range breaks, it can break hard. Range trading works best in calm, quiet markets. This is education, not financial advice.",
+  "hook": "Trade the *range*",
+  "keywords": [
+    "sideways",
+    "support",
+    "resistance",
+    "floor",
+    "ceiling",
+    "calm"
+  ],
+  "beats": [
+    {
+      "cue": "",
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "cue": "Here's how",
+      "layout": "host",
+      "gesture": "explain"
+    },
+    {
+      "cue": "Find support",
+      "layout": "card",
+      "title": "*Support* = the floor"
+    },
+    {
+      "cue": "Then find resistance",
+      "layout": "card",
+      "title": "*Resistance* = the ceiling"
+    },
+    {
+      "cue": "Buy near",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Buy low, *sell high*",
+      "items": [
+        "Buy near support",
+        "Sell near resistance"
+      ]
+    },
+    {
+      "cue": "Put your stop",
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "cue": "Range trading works",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Best in *calm* markets"
+    },
+    {
+      "cue": "This is education",
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ]
+}

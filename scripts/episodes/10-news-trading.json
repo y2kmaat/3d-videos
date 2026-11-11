@@ -1,0 +1,61 @@
+{
+  "script": "Big news can move markets in seconds. Here's how news traders handle it. They check the economic calendar every morning for events like interest rate decisions and jobs reports. Right at the release, spreads widen and price can whip both ways. So many traders wait fifteen minutes for the dust to settle, then trade the direction that holds. And they size down, because news trades are volatile. This is education, not financial advice.",
+  "hook": "Trading the *news*",
+  "keywords": [
+    "news",
+    "calendar",
+    "release",
+    "wait",
+    "fifteen",
+    "volatile"
+  ],
+  "beats": [
+    {
+      "cue": "",
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "cue": "Here's how",
+      "layout": "host",
+      "gesture": "explain"
+    },
+    {
+      "cue": "They check",
+      "layout": "card",
+      "title": "Check the *calendar*",
+      "items": [
+        "Interest rate decisions",
+        "Jobs reports"
+      ]
+    },
+    {
+      "cue": "Right at the release",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Expect *chaos*",
+      "items": [
+        "Spreads widen",
+        "Price whips both ways"
+      ]
+    },
+    {
+      "cue": "So many traders",
+      "layout": "card",
+      "title": "Let it *settle*",
+      "number": "15",
+      "numberLabel": "minutes"
+    },
+    {
+      "cue": "And they size",
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "cue": "This is education",
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "voice": "07-range-trading",
+  "hook": "Trade the *range*",
+  "beats": [
+    {
+      "at": 0.0,
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "at": 2.72,
+      "layout": "host",
+      "gesture": "explain"
+    },
+    {
+      "at": 4.4,
+      "layout": "card",
+      "title": "*Support* = the floor"
+    },
+    {
+      "at": 7.54,
+      "layout": "card",
+      "title": "*Resistance* = the ceiling"
+    },
+    {
+      "at": 11.34,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Buy low, *sell high*",
+      "items": [
+        "Buy near support",
+        "Sell near resistance"
+      ]
+    },
+    {
+      "at": 13.98,
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "at": 18.84,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Best in *calm* markets"
+    },
+    {
+      "at": 21.84,
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ],
+  "keywords": [
+    "sideways",
+    "support",
+    "resistance",
+    "floor",
+    "ceiling",
+    "calm"
+  ],
+  "musicFile": "music.mp3",
+  "musicVolume": 0.125
+}

@@ -1,0 +1,64 @@
+{
+  "script": "The RSI can tell you when a move might be running out of steam. RSI stands for relative strength index, and it runs from zero to one hundred. Above seventy, the market is called overbought. Below thirty, it's called oversold. Mean reversion traders look for price to snap back from those extremes. But in a strong trend, RSI can stay overbought for weeks. So wait for confirmation before you trade it. This is education, not financial advice.",
+  "hook": "Running *out of steam*?",
+  "keywords": [
+    "RSI",
+    "70",
+    "overbought",
+    "30",
+    "oversold",
+    "confirmation"
+  ],
+  "beats": [
+    {
+      "cue": "",
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "cue": "RSI stands",
+      "layout": "card",
+      "title": "Relative Strength *Index*",
+      "items": [
+        "Runs from 0 to 100"
+      ]
+    },
+    {
+      "cue": "Above 70",
+      "layout": "card",
+      "title": "Too *hot*",
+      "number": "70",
+      "numberLabel": "overbought"
+    },
+    {
+      "cue": "Below 30",
+      "layout": "card",
+      "title": "Too *cold*",
+      "number": "30",
+      "numberLabel": "oversold"
+    },
+    {
+      "cue": "Mean reversion",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "The *snap back*"
+    },
+    {
+      "cue": "But in a strong",
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "cue": "So wait",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Wait for *confirmation*"
+    },
+    {
+      "cue": "This is education",
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ]
+}

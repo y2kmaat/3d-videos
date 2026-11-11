@@ -1,0 +1,63 @@
+{
+  "voice": "10-news-trading",
+  "hook": "Trading the *news*",
+  "beats": [
+    {
+      "at": 0.0,
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "at": 2.22,
+      "layout": "host",
+      "gesture": "explain"
+    },
+    {
+      "at": 3.98,
+      "layout": "card",
+      "title": "Check the *calendar*",
+      "items": [
+        "Interest rate decisions",
+        "Jobs reports"
+      ]
+    },
+    {
+      "at": 9.18,
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Expect *chaos*",
+      "items": [
+        "Spreads widen",
+        "Price whips both ways"
+      ]
+    },
+    {
+      "at": 13.44,
+      "layout": "card",
+      "title": "Let it *settle*",
+      "number": "15",
+      "numberLabel": "minutes"
+    },
+    {
+      "at": 18.48,
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "at": 21.7,
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ],
+  "keywords": [
+    "news",
+    "calendar",
+    "release",
+    "wait",
+    "fifteen",
+    "volatile"
+  ],
+  "musicFile": "music.mp3",
+  "musicVolume": 0.125
+}

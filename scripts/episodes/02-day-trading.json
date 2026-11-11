@@ -1,0 +1,76 @@
+{
+  "script": "Day traders never hold a position overnight. Here's the playbook. Every trade opens and closes the same day, so overnight news can't hurt you. Most day traders focus on the first two hours after the market opens, when volume is highest. They plan the entry, the exit, and the stop loss before the bell. And they set a daily loss limit. Hit it, and you're done for the day. Day trading takes time, focus, and capital. This is education, not financial advice.",
+  "hook": "No trades *overnight*",
+  "keywords": [
+    "overnight",
+    "same",
+    "two",
+    "plan",
+    "limit",
+    "focus"
+  ],
+  "beats": [
+    {
+      "cue": "",
+      "layout": "host",
+      "gesture": "point"
+    },
+    {
+      "cue": "Here's the playbook",
+      "layout": "host",
+      "gesture": "explain"
+    },
+    {
+      "cue": "Every trade",
+      "layout": "card",
+      "title": "In and out *same day*",
+      "items": [
+        "No overnight risk",
+        "Flat by the close"
+      ]
+    },
+    {
+      "cue": "Most day traders",
+      "layout": "card",
+      "title": "The first *2 hours*",
+      "number": "2",
+      "numberLabel": "hours after the open"
+    },
+    {
+      "cue": "They plan",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Plan it *first*",
+      "items": [
+        "Entry",
+        "Exit",
+        "Stop loss"
+      ]
+    },
+    {
+      "cue": "And they set",
+      "layout": "host",
+      "gesture": "point",
+      "flash": true
+    },
+    {
+      "cue": "Hit it",
+      "layout": "card",
+      "title": "Daily loss *limit*",
+      "items": [
+        "Hit it = done for the day"
+      ]
+    },
+    {
+      "cue": "Day trading takes",
+      "layout": "split",
+      "gesture": "explain",
+      "title": "Time, focus, *capital*"
+    },
+    {
+      "cue": "This is education",
+      "layout": "card",
+      "title": "Education, *not* financial advice"
+    }
+  ]
+}
