@@ -59,6 +59,34 @@ export const RemotionRoot: React.FC = () => {
       }}
     />
     <Composition
+      id="HowToTrade"
+      component={FacelessShort}
+      durationInFrames={31 * FPS}
+      fps={FPS}
+      width={1080}
+      height={1920}
+      schema={facelessShortSchema}
+      calculateMetadata={calculateFacelessMetadata}
+      defaultProps={{
+        voice: "how-to-trade",
+        hook: "Why most traders *lose*",
+        beats: [
+          { at: 0, layout: "host" as const, gesture: "point" as const },
+          { at: 3.7, layout: "host" as const, gesture: "explain" as const },
+          { at: 5.7, layout: "card" as const, title: "Pick *one* market", number: "1", numberLabel: "market, not ten" },
+          { at: 9.3, layout: "split" as const, gesture: "explain" as const, title: "Risk max *1%*", items: ["Per trade", "Every time"], flash: true },
+          { at: 13.4, layout: "card" as const, title: "Stop loss *first*", items: ["Set it before you enter", "Never move it after"] },
+          { at: 16.8, layout: "split" as const, gesture: "explain" as const, title: "Keep a *journal*", items: ["Every win", "Every loss"] },
+          { at: 20.7, layout: "card" as const, title: "Demo account *first*", number: "3", numberLabel: "profitable months" },
+          { at: 25.5, layout: "host" as const, gesture: "point" as const, flash: true },
+          { at: 27.5, layout: "card" as const, title: "Education, *not* financial advice" },
+        ],
+        keywords: ["lose", "one", "percent", "stop", "journal", "demo", "skill", "three"],
+        musicFile: "music.mp3",
+        musicVolume: 0.125,
+      }}
+    />
+    <Composition
       id="CharacterFaceTest"
       component={CharacterFaceTest}
       durationInFrames={6 * FPS}
